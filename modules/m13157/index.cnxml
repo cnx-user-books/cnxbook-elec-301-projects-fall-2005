@@ -1,0 +1,99 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Medical Background</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>9e825942-6f2e-4c44-ac07-9bcfdc9b2bfe</md:uuid>
+</metadata>
+<content>
+<para id="id50243715">The heart rhythm as detected by an ECG is the
+result of the conduction system which is used by the heart to
+coordinate the heart beat. The electrical impulse is started by the
+SA node at the top of the heart. At this point the conduction
+system of the heart passes the impulse across both atria (top
+chambers of the heart) and to the AV node. The AV node acts as a
+time delay and then passes the impulse on to the conduction system
+in the Ventricles (lower chambers of the heart). The ventricles are
+larger than the atria because they actually pump the blood out of
+the heart and to the lungs or the rest of the body. Due to their
+larger size their depolarization produces the largest deflection on
+the ECG reading. This large deflection is referred to as the
+ventricular complex or the QRS complex. After the heart is done
+contracting the tissue must repolarize so that it will be ready to
+contract again. This repolarization shows up on the monitor as the
+"T" wave, or the final wave after the large QRS complex.</para>
+<para id="id50060182">The two lethal rhythms mentioned earlier,
+V-Tach and V-Fib, both cause death by interfering with the standard
+electrical coordination of the heart.</para>
+<list list-type="bulleted" id="id50319379">
+<item>V-Tach is a rhythm characterized by a very rapid succession
+of ventricular complexes. In this rhythm the heart beats at a rate
+between 100 and 250 beats per minute. On the monitor you will see
+the QRS complex, but due to the fast rate of the rhythm there is no
+flat period for effective repolarization. This rhythm is so fast in
+fact that the Ventricles will begin to contract before they have
+had time to actually fill with blood. This is called Pulseless
+Ventricular Tachycardia. Once a patient has gone into Pulseless
+Ventricular Tachycardia, they have only a manner of minutes before
+the drop to asystole and their chances of survival plummet.</item>
+<item>V-Fib occurs when the electrical system of the heart becomes
+exceedingly discoordinated. It is characterized only by random
+electrical activity without the presence of a pulse. If this rhythm
+is present immediate defibrillation is needed.</item>
+</list>
+<para id="id6772355"/>
+<para id="id46122012">If either of these rhythms is left untreated
+they will rapidly degenerate to asystole or flatline. In asystole
+the electrical activity of the heart has stopped and defibrillation
+is no longer capable of restarting it. At this point the only hope
+for survival is aggressive pharmaceutical action through Advanced
+Cardiac Life Support algorithms, but even these methods are often
+ineffective.</para>
+<para id="id46157920">In addition to identifying cardiac rhythms
+that present the possibility of death within the next few minutes,
+signal analysis could also identify potentially life threatening
+conditions before they reach a state of cardiac arrest. Acute
+Myocardial Infarctions (AMIs) or Heart Attacks are among the top
+causes of death in the United States. While many people become
+aware of their AMI through clinical signs such as chest pain, other
+conditions such as Diabetes or pain from other illnesses may mask
+the presence of an AMI. In the hospital an AMI can be detected
+through its effect on the conduction system of the heart as shown
+by an ECG. An active AMI will result in a lack of Oxygen to some of
+the myocardium. The ischemic tissue has different conductive
+properties; as a result of these changes the T-wave of a patient
+suffering from Ischemia in the Myocardium will be inverted. By
+detecting this rhythm we would allow patients to be alerted of
+their problem before they have reached a state of full
+arrest.</para>
+<para id="id6951604">With the increasing use of electrocardiograms
+and the application of devices such as defibrillators, proper
+measurement and identification of ECG signals is extremely
+important. However with such signals on the order of microvolts,
+significant levels of noise corruption make this very difficult.
+Having proper filters to remove such noise and allow for proper
+signal identification is crucial. This project aims to apply
+filtering algorithms in hopes of identifying some of the most
+common types of ECG signals.</para>
+<para id="id50147825">In addition to V-Tach and V-Fib the program
+identifies the following rhythms:</para>
+<list list-type="bulleted" id="id50250161">
+<item>Sinus is the normal rhythm found, 60 to 100 BPM with a flat
+period between QRS complexes for repolarization.</item>
+<item>Inverted T-wave is a normal sinus rhythm were the final wave
+after the QRS complex has inverted in polarity, this condition is
+indicative of a lack of Oxygen to the heart as caused by a heart
+attack.</item>
+<item>Asystole - is a lack of electrical activity shown by a
+flatline on the ECG readout.</item>
+</list>
+<para id="id50001165">
+<figure id="id50001168">
+<media id="idm6606672" alt=""><image src="../../media/Graphic1-37bd" mime-type="image/jpeg"/></media>
+</figure>
+<figure id="id5969832">
+<media id="idm14398448" alt=""><image src="../../media/Graphic2-ad61" mime-type="image/jpeg"/></media>
+</figure>
+<figure id="id50211618">
+<media id="idm7054848" alt=""><image src="../../media/Graphic3-67b2" mime-type="image/jpeg"/></media>
+</figure>
+</para>
+</content>
+</document>

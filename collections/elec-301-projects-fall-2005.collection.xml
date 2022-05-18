@@ -1,0 +1,139 @@
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+    <md:content-id>col10380</md:content-id>
+    <md:title>ELEC 301 Projects Fall 2005</md:title>
+    <md:language>en</md:language>
+    <md:license url="http://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution License</md:license>
+    <md:uuid>c1186144-f8e1-4b41-853b-672ca5d75ab9</md:uuid>
+<md:slug>elec-301-projects-fall-2005</md:slug>
+</metadata>
+  <col:content>
+    <col:subcollection>
+      <md:title>Steganography - What's In Your Picture </md:title>
+      <col:content>
+        <col:module document="m13170"/>
+        <col:module document="m13175"/>
+        <col:module document="m13173"/>
+        <col:module document="m13174"/>
+        <col:module document="m13184"/>
+        <col:module document="m13172"/>
+        <col:module document="m13171"/>
+        <col:module document="m13179"/>
+        <col:module document="m13181"/>
+        <col:module document="m13180"/>
+        <col:module document="m13177"/>
+        <col:module document="m13183"/>
+        <col:module document="m13182"/>
+        <col:module document="m13178"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Investigation of Delay and Sum Beamforming Using a Two-Dimensional Array</md:title>
+      <col:content>
+        <col:module document="m13161"/>
+        <col:module document="m13162"/>
+        <col:module document="m13163"/>
+        <col:module document="m13164"/>
+        <col:module document="m13165"/>
+        <col:module document="m13166"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Seeing Using Sounds</md:title>
+      <col:content>
+        <col:module document="m13222"/>
+        <col:module document="m13224"/>
+        <col:module document="m13218"/>
+        <col:module document="m13226"/>
+        <col:module document="m13219"/>
+        <col:module document="m13220"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Intelligent Motion Detection Using Compressed Sensing</md:title>
+      <col:content>
+        <col:module document="m13132"/>
+        <col:module document="m13133"/>
+        <col:module document="m13139"/>
+        <col:module document="m13137"/>
+        <col:module document="m13134"/>
+        <col:module document="m13136"/>
+        <col:module document="m13141"/>
+        <col:module document="m13138"/>
+        <col:module document="m13140"/>
+        <col:module document="m13131"/>
+        <col:module document="m13135"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Terahertz Ray Reflection Computerized Tomography</md:title>
+      <col:content>
+        <col:module document="m13146"/>
+        <col:module document="m13145"/>
+        <col:module document="m13144"/>
+        <col:module document="m13148"/>
+        <col:module document="m13147"/>
+        <col:module document="m13142"/>
+        <col:module document="m13143"/>
+        <col:module document="m13149"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Filtering and Analysis of Heart Rhythms</md:title>
+      <col:content>
+        <col:module document="m13156"/>
+        <col:module document="m13157"/>
+        <col:module document="m13158"/>
+        <col:module document="m13168"/>
+        <col:module document="m13167"/>
+        <col:module document="m13169"/>
+        <col:module document="m13160"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Naive Room Response Deconvolution</md:title>
+      <col:content>
+        <col:module document="m13151"/>
+        <col:module document="m13194"/>
+        <col:module document="m13192"/>
+        <col:module document="m13191"/>
+        <col:module document="m13190"/>
+        <col:module document="m13198"/>
+        <col:module document="m13199"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Musical Instrument Recognition</md:title>
+      <col:content>
+        <col:module document="m13195"/>
+        <col:module document="m12461"/>
+        <col:module document="m13197"/>
+        <col:module document="m13186"/>
+        <col:module document="m13200"/>
+        <col:module document="m13204"/>
+        <col:module document="m13206"/>
+        <col:module document="m13188"/>
+        <col:module document="m13207"/>
+        <col:module document="m13201"/>
+        <col:module document="m13205"/>
+        <col:module document="m13196"/>
+        <col:module document="m13203"/>
+        <col:module document="m13189"/>
+        <col:module document="m13185"/>
+        <col:module document="m13202"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Accent Classification using Neural Networks</md:title>
+      <col:content>
+        <col:module document="m13214"/>
+        <col:module document="m13209"/>
+        <col:module document="m13208"/>
+        <col:module document="m13216"/>
+        <col:module document="m13228"/>
+        <col:module document="m13231"/>
+        <col:module document="m13210"/>
+      </col:content>
+    </col:subcollection>
+  </col:content>
+</col:collection>

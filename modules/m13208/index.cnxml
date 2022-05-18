@@ -1,0 +1,41 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Collection of Samples</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f51005e9-ce8d-4188-a176-46e99ffc2646</md:uuid>
+</metadata>
+<content>
+<section id="samples">
+<title>Choosing the sample set</title>
+<para id="id46140108">
+We decided that one sample for each of the
+English vowels on the IPA chart would be a fairly thorough
+representative sample of each individual’s accent. With the
+inclusion of the two diphthongs that we also extracted, we took 14
+vowel samples per person. We used the following paragraph in each
+recording; there are at least 4 instances of each vowel sound
+located throughout it.</para>
+
+
+<figure id="element-227">
+<media id="idm8278240" alt=""><image src="../../media/stella.bmp" mime-type="image/bmp"/></media>
+</figure><para id="id53136401"><title>Phonetic Background</title>
+(Please i, call a, Ste-ε, -lla ə, Ask æ,
+spoons u , five ai, brother ə^, Bob α, Big I, toy oi, frog ν, go  o,
+station  e)</para>
+<para id="id52741415">The vowels in bold are the ones we decided to
+extract; we determined that these would provide the cleanest
+formants for the whole paragraph. For example, the ‘oo’ in ‘spoons’
+was chosen due to the ‘p’ that precedes the vowel. The ‘p’ sound
+creates a stop of air, almost like a vocal ‘clear’. A ‘t’ will also
+do this, which explains our choice of the ‘a’ in ‘station’.</para>
+<figure id="element-597"><title>Spoons</title>
+<media id="idm13782544" alt=""><image src="../../media/spoons.bmp" mime-type="image/bmp"/></media>
+<caption>The stop made by the 'p' is visible as a lack of formants</caption></figure><para id="id4046019">The two diphthongs present are the ‘ai’ from
+‘five’ and ‘oi’ from ‘toy’. In these samples, the formant values
+move smoothly from the first vowel representation to the
+second.</para>
+<para id="id52887842">The vowel samples that we cut out of the main
+paragraph ended up being about 0.04 seconds each with diphthongs
+being much longer to capture the entire sample transition.</para>
+</section>
+</content>
+</document>

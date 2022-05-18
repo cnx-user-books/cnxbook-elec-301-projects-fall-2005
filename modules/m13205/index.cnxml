@@ -1,0 +1,70 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Gaussian Mixture Model</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>46f4b897-99bd-4705-a62a-5ccb35a30f41</md:uuid>
+</metadata>
+<content>
+<section id="gmm"><title>Gaussian Mixture Model</title>
+<para id="id7636751">A Gaussian Mixture Model (GMM) was used as our
+classification tool. As our work focused mainly on signal
+processing, we forgo a rigorous treatment of the mathematics behind
+the model in favor of a brief description of GMMs and its
+application to our system.</para>
+<para id="id7636785">GMMs belong to the class of pattern
+recognition systems. They model the probability density function of
+observed variables using a multivariate Gaussian mixture density.
+Given a series of inputs, it refines the weights of each
+distribution through expectation-maximization algorithms.</para>
+<para id="id7636816">In this respect, GMMs are very similar to 
+<link document="m13131">Support
+Vector Machines</link> and 
+<link document="m11667">Neural
+Networks</link>, and all of these models have been used in
+instrument classification <link target-id="id7661804">(1)</link>. Reported success <link target-id="id7661804">(2)</link> with GMMs
+prompted us to use this model for our system.</para>
+</section>
+<section id="patterns"><title>Recognizing Spectral Patterns</title>
+<para id="id7636893">We use 9 features in our recognition program
+and relied on the GMM to find patterns that would associate these
+features to the correct instrument. Some of our features consist of
+a vector (we used 12 MFCC, and tristimulus has 3 components), so we
+are actually working in 22 dimension space. For convenience, we
+focus here on recognizing a pattern between the instrument and two
+of these dimensions, using the first two MFCC coefficients as an
+example.</para>
+<para id="id7636920">Looking at the distribution of features for
+the three instruments in figure 1, we clearly see that there are
+some feature differences based on instrument.</para>
+<figure id="id7636973"><title>Distribution of First Two MFCC Coefficients for Three Instruments</title>
+<media id="idm1160288" alt=""><image src="../../media/Graphic1-3092" mime-type="image/jpeg"/></media>
+<caption>Despite the heavy overlap, we see that each instrument dominates different sections of the cepstral space.</caption></figure>
+<para id="id7677219">GMM detects the patterns in these features and
+gives us a nice decision rule, as pictured in figure 2. Based on
+these two features alone, the GMM tells us which instrument most
+likely played the note, visually represented by the highest peak in
+the three-dimensional representation.</para>
+<figure id="id7677262"><title>Two-Parameter Gaussian Mixture Model for Three Instruments</title>
+<media id="idm415088" alt=""><image src="../../media/Graphic2-d195" mime-type="image/jpeg"/></media>
+<caption>Gaussian Mixture Model for Clarinet (blue), Saxophone (green), and Trumpet (red). Signals with features falling in a colored area are classified as a particular instrument. (Gray represents indeterminate instrument.)</caption></figure>
+<para id="id7634537">Finally, we note that GMMs have been shown to
+be useful if features are particularly weak or missing <link target-id="id7661804">(2)</link>. This is
+of particular importance in polyphonic environments, as harmonics
+may overlap, thus causing some features to be unreliable measures
+of the instrument.</para>
+</section>
+<section id="refs"><title>References</title>
+<list list-type="enumerated" id="id7661804">
+<item>A. Brenzikofer. “Instrument Recognition and Transcription in
+Polyphonic Music.” Term Project. Ecole Polytechnique Federale de
+Lausanne, June 2004. URL:
+http://www.brenzi.ch/data/murec-report-web.pdf</item>
+<item>J. Eggink and G.J. Brown. “A Missing Feature Approach to
+Instrument Identification in Polyphonic Music,” in IEEE
+International Conference on Acoustics, Speech, and Signal
+Processing, Hong Kong, April 2003, 553-556.</item>
+<item>D. Ellis. Musical Content Analysis: A Practical Investigation
+of Singing Detection. URL:
+http://www.ee.columbia.edu/~dpwe/muscontent/practical/index.html</item>
+</list>
+</section>
+</content>
+</document>

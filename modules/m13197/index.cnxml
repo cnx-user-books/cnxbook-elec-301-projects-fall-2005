@@ -1,0 +1,12 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Common Music Terms</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c6275b03-e6ba-4c1f-8217-91ed2c9f56c1</md:uuid>
+</metadata>
+  <content>
+    <para id="delete_me">Upon discussion of the implementation and general work done during the course of this project, a number of specific musical terms will be used. For those with a bit of musical background, these should be very straightforward. However, considering the steriotypical divide between the arts and the sciences, the following is a psuedo-comprehensive list of common terms that will be referenced within this report.</para><list list-type="bulleted" id="element-1000"><item>Articulation: Characteristics of the attack, duration, and decay (or envelope) of a given note.</item>
+<item>Intonation: Correctness of a produced pitch as compared to the accepted musical norm.</item>
+<item>Tone: Quality or character of a sound.</item>
+<item>Timbre: Combination of qualities of a sound that distinguishes it from other sounds of the same pitch and volume.</item></list>   
+  </content>
+  
+</document>

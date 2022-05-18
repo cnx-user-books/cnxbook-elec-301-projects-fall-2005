@@ -1,0 +1,12 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Introduction</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>b8559a30-4f61-49f7-ae7b-fa53370d4e74</md:uuid>
+</metadata>
+  <content>
+    <section id="intro_sec">
+      <title>Introduction</title>
+      <para id="intro">This project aims to accurately detect the pitches and instruments of a signal. To accomplish this, we intend to record and analyze the entire range of a few instruments, and then use this analysis to decompose monophonic, or one instrument, and polyphonic, or multiple instrument, signals into their component instruments and pitches. To keep the program managable, we will limit the polyphonic signals to three instruments.</para><para id="element-128">The applications of this project are far reaching, at least within the realm of musical instrument signal processing. A better understanding of musical timbre and tone is to be gained from the analysis of each instrument, and more specifically by comparing the signals produced by different instruments on the same pitch. Another, more practical goal of the musical instrument recognition project is automatic music transcription, or music to MIDI conversion.</para>
+    </section>   
+  </content>
+  
+</document>

@@ -1,0 +1,22 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Sample Outputs</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>d95942b4-cebc-4128-8119-6bdf10f5eb4a</md:uuid>
+</metadata>
+<content>
+<para id="element-150"> The original, unaltered Sinus wave at 80 BPM.</para><figure id="id49705371">
+<media id="idm8266672" alt=""><image src="../../media/Graphic1-84da" mime-type="image/jpeg"/></media>
+</figure>
+<para id="element-171"> White noise added to the 80 BPM Sinus signal.</para><figure id="id2773866">
+<media id="idm6773328" alt=""><image src="../../media/Graphic2-bb2e" mime-type="image/jpeg"/></media>
+</figure>
+<para id="element-337"> The output of the noisy signal sent through a low pass filter.</para>
+<figure id="id49781208">
+<media id="idp1748432" alt=""><image src="../../media/Graphic3-0922" mime-type="image/jpeg"/></media>
+</figure>
+<para id="element-1150">Output of the matched filter for the given input.</para>
+<figure id="id49966077">
+<media id="idm7882112" alt=""><image src="../../media/Graphic4-49cb" mime-type="image/jpeg"/></media>
+</figure>
+
+</content>
+</document>

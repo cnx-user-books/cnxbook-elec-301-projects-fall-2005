@@ -1,0 +1,9 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Problems in Polyphonic Detection</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0410ca65-7363-47ef-94ac-b0ef79c1b693</md:uuid>
+</metadata>
+  <content>
+    <para id="delete_me">The techniques we used for our recognition system have for the most part been applied to monophonic recordings.  In moving to polyphonic recordings, we have to subtract out the portion of the sound signal due to the first note and repeat the pitch detection and instrument recognition algorithm for each successive note.  We implemented a simple masking function to remove the portions of the spectrum contributed by the detected note.  Our first trial used a simple binary mask and removed all the harmonics given a fundamental frequency, but this has the problem of removing potentially significant information if the next note is a harmonic of the first, as their spectrum would therefore overlap.  We thus decided to use a more intelligent mask and remove parts of the spectrum using knowledge about the instrument that produced the note.  The mask was constructed from the average harmonic envelope and fundamental frequency in a process similar to the inverse of sinusoidal harmonic modeling.  However, we only work with the spectral amplitude and not with phase.  Because the spectral amplitude of multiple notes is not linear, however, the harmonic peaks in a polyphonic tune cannot simply be subtracted as we have done.  We note that accounting for the phase differences is a non-trivial problem, and the simplifying assumption of linearity in spectral amplitude is often used in polyphonic systems.</para>   
+  </content>
+  
+</document>

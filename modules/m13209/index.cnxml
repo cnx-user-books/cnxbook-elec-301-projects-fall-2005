@@ -1,0 +1,43 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Formants and Phonetics</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>3e9de0b7-3a4d-4d8e-bb77-5818ae41d2d6</md:uuid>
+</metadata>
+<content>
+
+<para id="id13311928">Taking the FFT (Fast Fourier Transform) of
+each voice sample outputs its frequency spectrum. A formant is one of four highest peaks in a spectrum sample.  From the
+frequency spectrums, the main formants can be extracted.  It is the
+location of these formants along the frequency axis that define a
+vowel sound. There are four main peaks between 300 and 4400 Hz,
+this bandwidth is where the strongest formants for human speech
+occur. For the purposes of this project, the group is to extract
+the frequency values of only the first two peaks since they provide
+the most information in terms of what the vowel sound is. Since all
+vowels follow constant and recognizable patterns in these two
+formants, the changes along an accent can be recorded with a high
+degree of accuracy.  Figure 1 shows this pattern between the vowel sounds and formant frequencies.</para>
+<figure id="element-101"><title>The IPA Vowel Chart</title>
+<media id="idm54880" alt=""><image src="../../media/ipachart.jpeg" mime-type="image/jpeg"/></media>
+</figure><para id="id13260462">The first formant (F1) is dependant on
+whether a vowel sound is more open or closed, so on the chart, F1
+varies along the y axis. F1 increases in frequency as the vowel
+becomes more open and decreases to its minimum as the vowel sound
+closes. The second formant (F2), however, follows along the x-axis.
+Thus, it varies depending on whether a sound is made in the front
+or the back of the vocal cavity. F2 increases in frequency the
+farther forward that a vowel is and decreases to its minimum as a
+vowel moves to the back. Therefore, each vowel sound has unique,
+characteristic formant values for its first two formants. With this
+in mind, it means that theoretically, across many speakers, the
+same frequency values for the first two formant locations should
+hold as long as they are making the same vowel sound.</para>
+<section id="pics">
+<title>Sample Spectograms</title>
+<figure id="element-202"><title>a as in call</title>
+<media id="idp8865216" alt=""><image src="../../media/a.bmp" mime-type="image/bmp"/></media>
+<caption>The first and second formant have similar values</caption></figure><figure id="element-360"><title>i as in please</title>
+<media id="idp7740784" alt=""><image src="../../media/i.bmp" mime-type="image/bmp"/></media>
+<caption>Very high f2 and small f1</caption></figure>
+</section>
+</content>
+</document>

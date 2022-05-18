@@ -1,0 +1,73 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Labview Implementation of 2D Array Delay and Sum Beamformer</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>171e28d6-3342-42e6-b594-a9743718fd77</md:uuid>
+</metadata>
+  <content>
+<section id="intro">
+  <title>Introduction</title>
+    <para id="delete_me"><link document="col10315">Our project</link> involves using a two-dimensional array of microphones to determine the direction from which a mystery signal comes.  This involves <link document="m13162">taking data from the microphones</link>, doing analysis of the data, and then outputting the results.  The second step we chose to implement in Labview.  In order to interface correctly with the DAQ card we had available, we used Labview 5.1.</para>
+    <para id="element-546"> The labview implementation of our project involved several stages:  First, we wrote a vi designed to get the input from the microphones by sampling the eight inputs to the DAQ card, and separate the resulting data into eight arrays, each holding a digitized signal.  We then <term>upsampled</term> each array (using a separate vi for that purpose) and passed the upsampled signals to the <link target-id="findnorm">main analysis vi</link>.  </para>
+    <para id="element-506"> The main analysis vi tests three of the signals by taking two of them and testing them individually against the third.  This test involves delaying the two signals and taking the norm of the delayed signal and the third signal.  Each norm is collected in an array, from which the max norm -- correspondent to the correct delay between the two signals -- can be found.   </para>
+    <para id="element-10"> If we know the correct delays between three signals, we can do some mathematics (explained in greater depth in the section on the <link target-id="gendelay">delay generation vi</link>) and derive the angles the signal is coming from. </para>
+<note id="idm3197216"> As a two-dimensional array has the ability to discern a point in three-dimensional space, there are two angles found here: <emphasis>theta</emphasis>, the angle along the xy plane, and <emphasis>phi</emphasis>, the angle relative to the z axis.</note>
+    <para id="element-259"> From the angles found, we can then calculate the appropriate delays to be applied to the other five signals.  Finally, we take all eight signals, delay them appropriately, and add them together to get our final result.  This is known as <term>delay and sum beamforming</term>.  </para>
+</section>   
+
+<section id="getsig">
+  <title>Waveform Generation VI</title>
+    <para id="element-709"> Most of the work here was done for us already, through Labview's <emphasis>Generate Waveforms VI</emphasis>, a module that, given certain information about an attached DAQ card, sampling rate, time to be sampled, etc., will seek out that DAQ card, sample the requested channels, and return the results in a two-dimensional array of doubles, where one dimension corresponds to the sample of the signal at one particular point in time, and the other to which channel sampled from.</para>
+    <figure id="element-791"><title>Waveform Generation VI</title>
+<media id="idm2233312" alt=""><image src="../../media/getsig.bmp" mime-type="image/bmp"/></media>
+<caption>VI we created to sample the microphones and upsample the resulting arrays</caption></figure><para id="element-740"> Our module took the data from said VI and separated it into eight one-dimensional arrays, one for each microphone.  (This was an essential step, as many of the array analysis functions that we wished to use would only work with one-dimensional arrays.)  Using our <link target-id="upsample">Upsampling VI</link> (discussed below), we then upsampled the signals, lowpass filtered them to <term>interpolate</term> the signal, and set the eight filtered and upsampled signals as the output of this VI.  This module takes as an input N, the amount by which the signals should be upsampled, and an input fs, the sampling frequency.</para>
+</section>
+
+<section id="upsample">
+  <title>Upsampling VI</title>
+    <para id="element-375"> From the beginning, we knew that there would be restricted sampling rate of the DAQ card, and the buffer would be effectively decreased by a factor of eight for any one signal (since the data from all eight signals comes into the same buffer).  Whatever sampling rate was left would meet the most basic <term>Nyquist</term> requirements and avoid aliasing in that fashion; however, the resultant signal was unlikely to possess much resolution beyond that.  Thus, upsampling would be a necessity.  </para>
+    <para id="element-821"> We initially searched Labview itself for a premade upsampling VI, presuming that one would exist, as it is a fairly common signal processing algorithm.  However, we were unable to find one and so set about creating a module that would do the job.  Our module takes as inputs the signal (array of points) to be upsampled and N, the amount the signal was to be upsampled, and passes as an output the upsampled signal.  </para>
+    <figure id="fig-2"><title>Upsampling VI</title>
+<media id="idp146768" alt=""><image src="../../media/ups.bmp" mime-type="image/bmp"/></media>
+<caption>Sub-VI used to upsample a signal</caption></figure><para id="element-407"> Following upsampling theory discussed in class (<link document="col10064">ELEC 301:  Signals and Systems</link>), the first step to our upsampler was to <term>zeropad</term>, that is, add zeros in between each point on the signal being upsampled.  Instead of attempting to implement a dynamic array, this was accomplished by creating a new array of the appropriate length (N times the length of the original array, where N is the amount the signal is being upsampled) and using a for loop to place the original signal elements into the new array spaced N points apart.  </para>
+    <para id="element-909"> This enlarged array of data is then passed back to the <link target-id="getsig">Waveform Generation VI</link> where it is lowpass filtered in order to fill in (<term>interpolate</term>) the new zeroed out positions, and passed onward as an output of the Waveform Generation VI.  The filter used in this operation is the Equi-Ripple FIR low pass filter.  </para>
+</section>
+
+<section id="gendelay">
+  <title>Delay Generation VI</title>
+    <para id="gendel-1"> This VI does the bulk of the mathematical analysis of the input signals.  It takes as inputs the two delays between microphones one and two, and one and four (derived from the calculations of max norms in the <link target-id="findnorm">Main Analysis VI</link>) and outputs an array that contains <emphasis>theta</emphasis>, <emphasis>phi</emphasis>, and the corresponding delays for the seven microphones (the delay of the first microphone is automatically set to zero). In all cases, the delays are scaled to correspond to the number of indexes the corresponding signal should be shifted, instead of the actual real-time delay.  (As we cannot shift a signal by fractional indexes.)</para>
+    
+    <code display="block" id="idm2136288">d12 = k12 / (fs * N);
+d14 = k14 / (fs * N);
+phi = acos( sqrt (v^2 * (d12 ^ 2 + d14 ^ 2) ) / d ) * sign (d12 * d14);
+theta = atan (d14 / d12);
+d13 = d12 * 2;
+d16 = d14 * 2;
+d18 = d13 + d16;
+d15 = d13 + d14;
+d17 = d16 + d12;</code>
+    <para id="element-793"> The first part of the above code is calculates the angles based on the spatial relations between the three microphones (microphone 1, used, as we said before, as the origin, and microphones 2 and 4, which can be found directly adjacent to microphone 1 in both directions).  As you can see, it is fairly simple geometry, complicated primarily by the scaling necessary to match the 'k' values (integer values used to iterate the for loop) to their corresponding 'd' value (actual delay in time).  </para>
+    <para id="element-772"> The second part of the code uses the angles mentioned above to calculate the delay values, although again due to the regular nature of our array, it is possible to calculate only two of the delays outright and extrapolate the rest of the delays from those two.  (Which is indeed what we have done in an effort to reduce calculations and make the algorithm more efficient.)</para><para id="element-65"> The final part of the code, not shown in the code above but which can be seen in the function node in the figure below, involves the recipropcal of those first two lines; that is, rescaling all the 'd' values found to 'k' values that can actually be used when shifting the signals prior to adding them together.</para><figure id="element-322"><title>Delay Generation VI</title>
+	<media id="idm784" alt=""><image src="../../media/gen_a_shift.bmp" mime-type="image/bmp"/></media>
+	<caption>Sub-VI that, given the values 'k12' and 'k14', will generate the shifts (in indices) of the seven microphones (with the shift of microphone 1 assumed to be zero) and the angles theta and phi that the signal came from.</caption></figure>
+</section>
+
+<section id="findnorm">
+  <title>Main Analysis VI</title>
+    <para id="element-86"> This is our top-end module, where all the modules mentioned in the previous section are brought together in the same vi and linked together in the proper ways so as to create a working project. </para>
+    <figure id="element-675"><title>Main Analysis VI</title>
+<media id="idp4042400" alt=""><image src="../../media/mainanal.bmp" mime-type="image/bmp"/></media>
+<caption>The culmination of our struggles with Labview 5.1, our top-end module which does ... well ... everything.</caption></figure><para id="allelse-2"> First, not unexpectedly, there is a call to the <link target-id="getsig">Waveform Generation VI</link>, which provides us with our collected and upsampled signals. From that sub-VI, the signals from microphones 1, 2, and 4 are taken, microphones 1 and 2 passed to one for loop and 1 and 4 passed to the other.  Within the for loop, as mentioned before, one signal is shifted relative to the other, and the norm taken, for all delay values possible.  The result of this is concatenated into an array, the maximum norm found, and from the location of the maximum norm, the value of the delay, or as close as we can get with the sampling resolution we have. </para>
+    <para id="allelse-3">These shift values (the integer index corresponding to as close as we can get to the ideal time delay) are passed to the <link target-id="gendelay">Delay Generation VI</link>, which then returns an array of values.  The theta and pi values function as outputs to the front panel, and then the delay (shift) values are used to set the necessary shift for their corresponding microphone.  Finally, the shifted output arrays are all summed (using a for loop, as a point by point summing module also seemed to be among those useful things not premade in Labview 5.1), and the output of the for loop, the array that is the sum of all the previous ones, is then attached to a waveform graph, also on the front panel.  </para><figure id="element-424"><title>An Example Result</title>
+<media id="idm3260832" alt=""><image src="../../media/itworks4_edit.bmp" mime-type="image/bmp"/></media>
+<caption>As the titles state, the upper waveform is that of the first signal (unmodified in any way), and the second that of the final, delayed and summed signal.  Note how the latter signal is somewhat smoother and the noise level reduced in comparison to the signal itself (a series of claps).  The two numbers at the bottom correspond to the computer's calculation of what direction the signal is coming from.</caption></figure><note id="idm2085456"> Phi is measured such that straight up is at zero, along the xy plane at 90 degrees.  Theta is measured with the "bottom" of the array (although it can of course be reoriented as the user pleases), that is, the negative y direction, as zero degrees.  The signs of the angles indicate the direction of propagation of the wave, and are thus opposite to conventional intuition, and the sign of phi is, of course, impossible to determine with any degree of accuracy due to the up-down ambiguity inherent in a two-dimensional array.</note><para id="element-391"> Success!  (For a deeper exploration of our results, please continue to the <link document="m13164">results</link> module </para>
+</section>
+
+<section id="code">
+  <title>Labview Code</title>
+    <list list-type="bulleted" id="element-34"><item> <link resource="upsampler.vi">Upsampling VI</link></item>
+<item> <link resource="getsig.vi">Waveform Generation VI</link></item>
+<item> <link resource="gen_a_shift.vi">Delay Generation VI</link></item>
+<item> <link resource="mainanal.vi">Main Analysis VI</link></item></list>
+</section>
+  </content>
+  
+</document>

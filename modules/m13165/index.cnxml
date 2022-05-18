@@ -1,0 +1,76 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Delay and Sum Beamforming with a 2D Array:  Conclusions</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>b1a839cb-7d25-4496-91ca-f0c5bed9a69d</md:uuid>
+</metadata>
+  <content>
+<section id="results">
+  <title>Summary of Results of Data</title>
+    <para id="delete_me">As can be seen in the screenshots given in the <link document="m13164">results</link> section, the setup and
+program work at least some of the time. As was noted in the <link document="m13161">introduction</link>,
+there is a small degree of ambiguity resulting from the two-dimensional nature
+of the array in that the array and algorithm will not be able to distinguish at
+all, theoretically, between a source above the array and an identical source at
+a location that is the original source reflected across the plane of the array.
+Practically, this should not matter at all if the array is mounted on a wall
+or on the ground, but should the need arise, the problem can be eliminated
+completely by taking the array to three dimensions. </para>
+<para id="element-486"> As the arccosine function
+was used in the computation of one of the angles, accuracy is much worse
+as the angle approaches ±pi/
+2 due to the slope of the arccosine function going to
+infinity in that region. The shortcuts we took were probably detrimental to the
+accuracy of the project, but once again, they were necessary to have it run
+at all on what we had to work with. Scanning with only three microphones
+instead of with all eight does not fully utilize the noise-reducing capability of
+the delay and sum technique, but it does conserve a great deal of computing
+power. The simplification made by assuming that the three microphones used
+to scan could be broken up into pairs will sometimes yield ”Not a Number” as
+one of the angles because the resulting delays are not physically realizable.
+</para>
+<para id="element-229"> When it works, the simplification cuts computation for that portion of the
+program from complexity O(n^2) to O(n). The reason for this is that the
+”safe” way to scan using the three microphones would be to check each
+valid pair of delays, where valid would mean that the delays between the
+microphones was physically realizable, and then take the pair corresponding
+to the maximum power whilst the ”quick” way to do so that we ended up using
+was to compute the delay for one pair, compute the delay for the other pair,
+and then assume that the two delays as a pair were physically realizable. This
+works if the maximum power is located at one of the valid pairs of delays (as, in most cases where there is a well defined signal, it will be) and
+fails if it is not, but is in return far faster, much as the reduction in computational
+complexity would suggest. </para>   
+</section>
+<section id="limit">
+  <title>Limitations of Hardware and Computing Power</title>
+<para id="limit-1">Any increases in computing power and hardware would always be welcome
+in a computationally intensive project such as this; however, the computers
+and hardware that were used were far from top of the line, even for five years
+ago. The DAQ card that was available for use is far enough out of date that it is no longer supported by
+National Instruments; in fact, the current version of Labview does not even
+recognize it. </para><para id="element-597"> As a result, in order to be able to interface with the DAQ card that was available, the version of Labview this project was implemented on was also greatly out of date -- to the point where the NI website no longer provided support. A good indicator of the age of the hardware is
+the fact that the computer used possessed a turbo button. In fact, it seems
+that the computers were probably very good when they were first purchased
+as the RAM size is actually 32 megabytes. However, that was enough years ago to where they no longer are adequate for the level of processing we wished to do.</para><para id="element-472"> With more computing power and
+better hardware, it would be possible to increase the amount of sampling (restricted by a 64kbyte buffer) and upsampling to increase accuracy and precision, take fewer shortcuts, also to the same effect, or perhaps run in real time (a feat possible only if the processing time is of equivalent length to or less than the time it takes to input a "chunk" of the signal).</para>
+</section>
+
+<section id="extend">
+<title>Possible Extensions</title>
+<para id="ex-1"> One obvious extension to this project would be to go to a 3-dimensional array,
+eliminating the ambiguity arising from reflection of signals across the plane
+of the array. Another possible improvement would be to increase the processing speed to the point where processing in real time could be a possibility. This project
+only dealt with calculations in far field, which seem to be less computationally
+taxing than calculations in near field. Thus, another possible extension would
+be to implement something that could accurately locate signals in near field. Another possible region of interest might be to investigate beamforming when dealing with multiple signal sources.
+</para><para id="element-150"> Simple delay and sum is optimal (in ability to distinguish, if not in computational complexity) for a single source and white noise, but we
+are unsure if it is optimal if some structure to the noise is known. In the
+case of multiple signals, the other signals would be considered noise when
+focusing in on one signal. It may be possible to focus on each of the signals
+and separate them. If there is not a closed form for doing so, the
+separation could probably be done iteratively by some sort of subtraction. A
+further extension of this would be to apply blind signal separation techniques
+to distinguish signal sources that seem to overlap.
+</para>
+</section>
+  </content>
+  
+</document>

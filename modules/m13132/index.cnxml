@@ -1,0 +1,34 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Intelligent Motion Detection and Compressed Sensing</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>a644661c-6dd3-43b6-9a21-1f6a637b8eb4</md:uuid>
+</metadata>
+<content>
+<section id="id27104574">
+<title>New Camera Technology with New Challenges</title>
+<para id="id25941576">Our project investigates intelligent motion
+detection using compressed sensing (CS), an emerging data acquisition technology with promising applications for still and video cameras.  CS incorporates image compression into the initial
+data collection on an image rather than generating a compressed file after initially collecting a larger amount of data. 
+By taking only as many data points as will be stored or
+transmitted, compressed sensing seeks to eliminate the waste from
+collecting many, many pixel-intensity values on an image and then
+using compression algorithms (such as JPEG or GIF) to encode a much
+smaller number of data points to closely approximate the
+information in the original image. [1]</para>
+<para id="id25941768">Lower resource usage makes compressed sensing
+cameras attractive choices for low-power applications including
+security cameras. Ilan Goodman, Ph.D candidate at Rice University,
+has demonstrated that motion detection using a simulated CS camera
+is possible by computing entropy changes between successive CS
+measurements [2]. Starting from his work, we explore what can be
+determined about the motion of an object using compressed
+sensing.</para>
+<para id="id26800552">[1] "Compressed Sensing Resources." Digital
+Signal Processing Group, Department of Electrical and Computer
+Engineering, Rice University. 2005.
+<link url="http://www.dsp.ece.rice.edu/cs">http://www.dsp.ece.rice.edu/cs</link>.</para>
+<para id="id26260531">[2] I.N. Goodman &amp; D.H. Johnson. "Look at
+This: Goal-Directed Imaging with Selective Attention." (poster) 2005
+Rice Affiliates Day, Rice University, 2005.</para>
+</section>
+</content>
+</document>

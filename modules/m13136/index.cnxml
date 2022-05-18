@@ -1,0 +1,166 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Speed Calculation: the Details</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>724dd427-f689-44d5-845c-6b505b976282</md:uuid>
+</metadata>
+  <content>
+    <section id="extens"><title>Extensibility</title>
+<para id="delete_me">
+To make our speed algorithm as extensible to as many different situations as possible, we normalize the results with respect to the overall intensity in the image.  This gives a measure of change whose magnitude is scaled by the size of the image.  The overall intensity is calculated as
+
+where Cn,t is the compressed sensing measurement along basis element n and time t.  The CS resolution, or number of data points taken per frame, is N.
+</para><equation id="element-141"> <m:math>
+  <m:apply>
+    <m:eq/>
+    <m:msub>
+      <m:mi>I</m:mi>
+      <m:mi>t</m:mi>
+    </m:msub>
+    <m:apply>
+      <m:times/>
+      <m:mrow>
+        <m:mfrac>
+          <m:mn>1</m:mn>
+          <m:mi>N</m:mi>
+        </m:mfrac>
+        <m:mspace width="+0em"/>
+      </m:mrow>
+      <m:mrow>
+      <m:apply>
+        <m:sum/>
+        <m:bvar><m:mi>n</m:mi></m:bvar>
+        <m:lowlimit><m:mn>1</m:mn></m:lowlimit>
+        <m:uplimit><m:mi>N</m:mi></m:uplimit>
+        <m:mrow>
+          <m:mo>|</m:mo>
+          <m:ci>
+            <m:msub>
+              <m:mi>C</m:mi>
+              <m:mi>n,t</m:mi>
+            </m:msub>
+          </m:ci>
+          <m:mo>|</m:mo>
+        </m:mrow>
+      </m:apply>
+      </m:mrow>
+    </m:apply>
+  </m:apply>
+</m:math></equation>
+</section>
+<section id="aac"><title>Average Absolute Change to Measure Speed</title><para id="element-599"> As described earlier, increased velocity yields greater change between subsequent measurements in time of a particular projection.  Our calculation to measure velocity is:</para><equation id="element-44"> <m:math>
+  <m:apply>
+  <m:eq/>
+  <m:mi>AAC</m:mi>
+  <m:apply>
+    <m:times/>
+    <m:mrow>
+      <m:mfrac>
+        <m:mn>1</m:mn>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>t</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:mfrac>
+      <m:mspace width="+0em"/>
+    </m:mrow>
+    <m:mrow>
+      <m:mfrac>
+        <m:mn>1</m:mn>
+        <m:mi>N</m:mi>
+      </m:mfrac>
+      <m:mspace width="+0em"/>
+    </m:mrow>
+    <m:mrow>
+    <m:apply>
+      <m:sum/>
+      <m:bvar><m:mi>n</m:mi></m:bvar>
+      <m:lowlimit><m:mn>1</m:mn></m:lowlimit>
+      <m:uplimit><m:mi>N</m:mi></m:uplimit>
+        <m:mrow>
+          <m:mo>|</m:mo>
+          <m:apply>
+            <m:minus/>
+            <m:ci>
+              <m:msub>
+                <m:mi>C</m:mi>
+                <m:mi>n,t</m:mi>
+              </m:msub>
+            </m:ci>
+            <m:ci>
+              <m:msub>
+                <m:mi>C</m:mi>
+                <m:mi>n,t-1</m:mi>
+              </m:msub>
+            </m:ci>
+          </m:apply>
+          <m:mo>|</m:mo>
+       </m:mrow>
+    </m:apply>
+    </m:mrow>
+  </m:apply>
+  </m:apply>
+</m:math>
+</equation><para id="element-301"> Since we are interested only in the amount of change that occurs, the absolute value is taken.  Because the projections themselves are random, any one measurement is not a good indication of the change and it is only by averaging a number of calculations that a meaningful value can be computed.  </para>
+</section>
+<section id="asc"><title>Average Squared Change to Measure Speed</title><para id="element-87">
+As another way to measure the change between frames, the squared difference between frames is taken.  This measure was suggested by Ilan Goodman to explore the Parseval equivalencies often observed between domains.
+</para><equation id="element-850"> <m:math>
+  <m:apply>
+  <m:eq/>
+  <m:mi>ASC</m:mi>
+  <m:apply>
+    <m:times/>
+    <m:mrow>
+      <m:mfrac>
+        <m:mn>1</m:mn>
+        <m:ci>
+          <m:msub>
+            <m:mi>I</m:mi>
+            <m:mi>t</m:mi>
+          </m:msub>
+        </m:ci>
+      </m:mfrac>
+      <m:mspace width="+0em"/>
+    </m:mrow>
+    <m:mrow>
+      <m:mfrac>
+        <m:mn>1</m:mn>
+        <m:mi>N</m:mi>
+      </m:mfrac>
+      <m:mspace width="+0em"/>
+    </m:mrow>
+    <m:mrow>
+    <m:apply>
+      <m:sum/>
+      <m:bvar><m:mi>n</m:mi></m:bvar>
+      <m:lowlimit><m:mn>1</m:mn></m:lowlimit>
+      <m:uplimit><m:mi>N</m:mi></m:uplimit>
+      <m:msup>
+        <m:mfenced>
+          <m:apply>
+            <m:minus/>
+            <m:ci>
+              <m:msub>
+                <m:mi>C</m:mi>
+                <m:mi>n,t</m:mi>
+              </m:msub>
+            </m:ci>
+            <m:ci>
+              <m:msub>
+                <m:mi>C</m:mi>
+                <m:mi>n,t-1</m:mi>
+              </m:msub>
+            </m:ci>
+          </m:apply>
+        </m:mfenced>
+        <m:cn>2</m:cn>
+      </m:msup>
+    </m:apply>
+    </m:mrow>
+  </m:apply>
+  </m:apply>
+</m:math></equation><para id="element-844"> Since this metric computes the square of the two norm of , it is linearly proportional to the intensity changes of the difference image in the pixel domain.</para></section>   
+  </content>
+  
+</document>

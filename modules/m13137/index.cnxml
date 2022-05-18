@@ -1,0 +1,37 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Methodology for Extracting Information from "Random" Measurements</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>35723de2-1d0c-4754-a3ae-ad43ce0e9f53</md:uuid>
+</metadata>
+<content>
+<section id="id27013603">
+<title>Simulating Compressed Sensing</title>
+<para id="id27013701">Because compressed sensing cameras are not yet availiable, we used a Matlab routine written by Ilan Goodman to simulate CS measurements from a standard pixel image file [1].  Only the compressed sensing measurements are passed into our suite of calculation programs which run exactly as if the CS measurements came from a hardware-implemented CS camera.      
+</para><para id="element-323"> To implement compressed sensing on an image (matrix) according to the definition, a random matrix the same size of the image is generated.  The projection (inner product) of the image onto the random basis matrix gives a single compressed sensing measurement.  This is repeated with different (fixed) random matricies until the desired compressed sensing resolution is achieved.  This is computationally intensive and so a different approach is used in practice to simulate our data: first, every pixel of the image is randomly mapped to a different location to randomize the image.  Next, the DCT (discrete cosine transform) is taken on the randomized image.  This process of randomization and projection is equivalent to projection onto a random basis [1].</para>
+</section>
+<section id="id27107962">
+<title>Random, On Average</title>
+<para id="id14853600">We exploited two key facts about compressed
+sensing on a random basis to calculate speed:</para>
+<para id="id27108249">1) The average value of the elements of the
+random basis used is 1.</para>
+<para id="id27045246">2) On a given image, a fixed random basis
+yields the same projections every time it is used.</para>
+<para id="id27108099">While seemingly trivial, this basic data
+allows us to determine velocity quite accurately based on a few
+observations in the pixel domain.</para>
+<para id="id27108129">Consider the following moving rectangles:</para>
+<figure id="element-898"><title>Rectangles Moving Horizontally at Different Speeds</title>
+<media id="idp2178416" alt=""><image src="../../media/Movingbox.PNG" mime-type="image/png"/></media>
+<caption>Two rectangles moving to the right with constant speeds</caption></figure>
+<para id="id27107986">Now consider the difference between subsequent frames showing the motion of the rectangles:</para><figure id="element-128"><title>Moving Rectangles: the Difference Between Subsequent Frames</title>
+<media id="idm5858160" alt=""><image src="../../media/PlusMinus.PNG" mime-type="image/png"/></media>
+<caption>In each subsequent frame, areas where the current and previous rectangles overlap remain the same while new area is added in the direction of motion and old area is lost opposite the direction of motion.</caption></figure><para id="element-576"> Since the red rectangle is moving faster, there is less overlap between subsequent frames and more area is both added to and subtracted from the image area.  Therefore, we would expect that since the difference between subsequent images is greater for the red rectangle that the difference between consecutive compressed sensing projections along the same basis element is also greater.  Taking a simple difference between consecutive CS measurements should yield a measure of the change between frames. </para><para id="element-636"> This basic intuition can also be supported rigorously.  The difference between frames can be thought of as an image itself with a positive region on the leading edge of motion and a negative region at the trailing edge.  Since the CS measurement process is linear time invariant assuming a fixed basis, the difference between projections in subsequent frames is the same as the projection of the difference image [2].  If the background behind the moving objects has zero value, then the CS projection values of the difference image is based solely on the difference between frames of the original images.  The larger the non-zero area of the difference image, the larger the inner product with the CS basis elements are expected to be and a positive relationship exists between speed and frame difference measured from the compressed sensing data.</para><para id="element-437"> These calculations yeild a ratio between the change between subsequent frames along the direction of motion with respect to the total intensity in the frame.  The same shape either moving in a different direction or with different orientation will produce different results.  For more complicated shapes, the amount of change is not linear with speed and we expect the measurement of change will be more complicated, but still deterministic.</para><figure id="element-572"><title>Difference Images for Other Objects</title>
+<media id="idm5799872" alt=""><image src="../../media/tri.PNG" mime-type="image/png"/></media>
+<caption>Different objects, or objects shaped differently with respect to the direction of motion, produce differing overlap areas between subsequent frames.</caption></figure></section>
+<section id="reslim"><title>Resolution Limit</title>
+<para id="element-118"> Calculating velocity in this way is limited to sampling rates that show overlap between consecutive frames.  If the object is moving so quickly that there is no overlap, it is unclear how far it has moved: a speed where the frames are just slightly discontinuous will give similar results to a much faster speed.</para>
+</section><para id="element-205">[1] I.N. Goodman &amp; D.H. Johnson. Look at
+This: Goal-Directed Imaging with Selective Attention. (poster) 2005
+Rice Affiliates Day, Rice University, 2005.</para><para id="element-524"> [2] Goodman, I.N. Personal conversation. 9 December 2005.</para>
+</content>
+</document>

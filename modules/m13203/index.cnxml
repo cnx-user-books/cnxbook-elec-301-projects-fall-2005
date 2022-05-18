@@ -1,0 +1,18 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Acknowledgements and Inquiries</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>de7aeb3b-0454-4c60-af36-f451dc1a03fb</md:uuid>
+</metadata>
+<content>
+<para id="id12779550">The team would like to thank the following
+people and organizations.</para>
+<list list-type="bulleted" id="element-960"><item>Department of Electrical and Computer Engineering, Rice University</item>
+<item>Richard Baraniuk, Elec 301 Instructor</item>
+<item>William Chan, Elec 301 Teaching Assistant</item>
+<item><link target-id="col10216">Music Classification by Genre.</link> Elec 301 Project, Fall 2003. Mitali Banerjee, Melodie Chu, Chris Hunter, Jordan Mayo</item>
+<item><link target-id="col10216">Instrument and Note Identification.</link>  Elec 301 Project, Fall 2004.  Michael Lawrence, Nathan Shaw, Charles Tripp.</item>
+<item><link url="http://rvl4.ecn.purdue.edu/~malcolm/interval/1998-010/">Auditory Toolbox.</link> Malcolm Slaney</item>
+<item><link url="http://www.ncrg.aston.ac.uk/netlab/intro.php">Netlab.</link> Neural Computing Research Group. Aston University</item></list>
+<para id="id12842670">For the Elec 301 project, we gave a <link resource="poster.pdf">poster</link> presentation on December 14, 2005.  We prefer not to provide our source code online, but if you would like to know more about our
+algorithm, we welcome any questions and concerns.  Finally, we ask that you reference us if you decide to use any of our material.</para>
+</content>
+</document>

@@ -1,0 +1,49 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Hardware Setup for Perimeter Array of Microphones</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0b5eab50-fd15-4873-802e-4593344ed533</md:uuid>
+</metadata>
+<content>
+<section id="id37193608">
+<title>Hardware Setup for Perimeter Array of Microphones</title>
+<section id="mics">
+  <title>Choosing Microphones</title>
+<para id="id22571436">Before you can do cool things such as
+beamforming by processing signals from microphones, you need a way
+to gather the signals. A few essentials components in this are the
+microphones themselves, the analog-to-digital converter, and in
+many cases a preamplifier for the microphones.</para>
+
+<para id="id35716777">The type of microphones we used in our
+<link document="col10315">project</link> were Electret Microphone Elements. We chose these because
+they:</para>
+<list list-type="bulleted" id="element-343"><item>are omni-directional</item>
+<item>have a good, even, frequency response</item>
+<item>run off a battery</item>
+<item>are small (and inexpensive too)</item></list>
+</section>
+<section id="daq">
+  <title>Data Acquisition</title>
+<para id="id35859360">The analog-to-digital converter we used was a
+DAQPad device generously lent to us by National Instruments.</para>
+</section>
+<section id="preamps">
+  <title>PreAmps</title>
+<para id="id35859364">The DAQ device requires an input signal of 50
+mV to 10V, and the Microphone Elements output signals in the 20-200
+μV range. So we built preamplifiers that took in the signal from
+the microphones and amplified it 3158.44x. We used LM324
+quad-operational amplifiers, with 56.2 kOhm and 1 kOhm
+resistors.  At the inputs of each amplifier is a 2.2 uF capacitor designed to eliminate a slight DC offset produced by each microphone.</para><figure id="element-259"><title>PreAmplifier Schematic with LM324</title>
+	<media id="idm8392560" alt=""><image src="../../media/preamp.jpg" mime-type="image/jpeg"/></media>
+	<caption>The configuration for preamplifiers with a LM324 opamp.</caption></figure>
+</section>
+<section id="box">
+  <title>Putting it all Together</title>
+<para id="id35859365">The next step is putting everything together.  We built the perimeter array of microphone in a shallow box.  To make a perimeter array we put 8 microphones in a pattern around the edge of a square 5.5 centimeters apart.  The preamps and batteries were housed under the box, with the outputs coming from the side to connect to the DAQ card.</para><figure id="element-30"><title>Microphone Perimeter Array</title>
+	<media id="idm9230320" alt=""><image src="../../media/box2.JPG" mime-type="image/jpeg"/></media>
+	<caption>The box housing the perimeter microphone array and preamps.</caption></figure>
+
+</section>
+</section>
+</content>
+</document>

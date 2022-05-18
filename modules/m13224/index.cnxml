@@ -1,0 +1,15 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Seeing using Sound - Design Overview</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>691133be-a7b2-411d-b553-45ccb47f84be</md:uuid>
+</metadata>
+  <content>
+<section id="idp2409616">
+  <title>Input Filtering</title>
+    <para id="delete_me">The first step in our process is to filter the input image.  This process helps solve the "busy" sound problem from the <link url="http://www.visualprosthesis.com/javoice.htm">vOICe</link>.  We decided to first smooth the image with a low pass filter, leaving only the most prominent features of the image  behind.  We then wanted to filter the result with an edge detector, essentially a high pass filter of some sort.  We chose to use a Canny filter for the edge detection.  The advantage of using an edge detector lies in simplifying the image while at the same time highlighting the most structurally significant components of an image.  This is especially applicable to using the system for the blind, as the structural features of the image are the most important to find your way around a room.      </para></section>
+<section id="idp539344">
+  <title>The Mapping Process</title>
+<para id="element-386"> Simply put, the mapping process is the actual transformation between visual information and sound.  This block takes the data from the filtered input, and produces a sequence of notes representing the image.  The process of mapping images to sound is a matter of interpretation, there is no known "optimal" solution to the mapping for the human brain.  Thus, we simply chose an interpretation that made sense to us.  </para><para id="element-725"> First of all, it seemed clear to us that the most intuitive use of frequency would be to correlate it to the relative vertical position of an edge in the picture.  That is, higher frequencies should correspond to edges that are higher in the image than lower frequencies.  The only other idea that we wanted to stick to was making the center the focus of the attention.  For a complete description of this component, see the mapping process.  </para>   
+</section>
+  </content>
+  
+</document>

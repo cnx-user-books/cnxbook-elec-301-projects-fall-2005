@@ -1,0 +1,35 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Sinusoidal Harmonic Modeling</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>09def65b-7575-457b-aa64-5f537e60a349</md:uuid>
+</metadata>
+<content>
+<section id="temp"><title>Sinusoid Harmonic Modeling</title>
+<para id="id7019837">We would like to capture the “typical”
+spectrum for each instrument, independent of the pitch being
+produced. This allows us to classify a signal using our model
+without providing the pitch as another parameter to the model. (We
+note that this method is not without consequences, as the frequency
+response of the instrument changes the spectrum depending on the
+note being played. For example, very low and very high notes are
+more likely to vary than notes at mid-range. We decided to go with
+this approach to save time in model training and hopefully reduce
+the dimensionality of our problem.)</para>
+<para id="id7256744">Sinusoidal harmonic modeling (SHM) captures
+the harmonic envelope of a signal (as opposed to its spectral
+envelope) and is ideal for tonal sounds produced by wind
+instruments, as most of the spectral energy is captured in the
+harmonics. Given a spectrum, SHM finds the fundamental frequency
+and estimates the harmonics and the harmonic amplitudes, eventually
+producing a amplitude versus harmonic graph.</para>
+<figure id="id7073123">
+<media id="idm734432" alt=""><image src="../../media/12345.png" mime-type="image/png"/></media>
+<caption>Average Harmonic Envelope for Clarinet (Blue), Tenor Sax (Green), and Trumpet (Red)</caption></figure>
+<para id="id2767054">From this representation, we can then
+determine characteristic features of the instrument. For example,
+qualitatively, we can tell that the spectrum of a clarinet declines
+rather fast, and that most of the energy is in the odd harmonics.
+Similarly, we can tell that the saxophone declines slower, and that
+the trumpet has its harmonic energies relatively distributed among
+the odd and even indices.</para></section>
+</content>
+</document>

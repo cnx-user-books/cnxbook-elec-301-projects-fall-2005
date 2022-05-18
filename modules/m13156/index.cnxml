@@ -1,0 +1,27 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Introduction to Electrocardiogram Signals</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f1aa18eb-bc3e-4274-9032-6f5aab180b02</md:uuid>
+</metadata>
+<content>
+
+	  <section id="version">
+	    <title>Abstract</title>
+<para id="id8489233">Every year the leading cause of death among
+Americans is Coronary heart disease (CHD). CHD typically accounts
+for approximately 466,000 deaths each year with half of those
+deaths occurring before the patient is able to reach a hospital.
+According to figures by the American Heart Association, patients
+who experience a full cardiac arrest in an area where EMS response
+times are long may have only a 1 to 2 percent chance of survival.
+With effective bystander CPR and prompt response by EMS survival
+rates increase to around 30 percent. Through advancements in DSP
+and portable electronics Automatic External Defibrillators (AEDs)
+now allow for a whole new level of care. Prompt action by trained
+bystanders has led to survival rates approaching 75 percent in some
+areas employing Public Access Defibrillators (PADs). Rice
+University uses AEDs on campus and with their assistance Rice EMS
+has managed to maintain a survival rate of 60 percent for patients
+in full cardiac arrest while for the greater Houston area it is
+closer to 12 percent.</para></section>
+</content>
+</document>

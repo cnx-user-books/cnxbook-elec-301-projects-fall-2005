@@ -1,0 +1,9 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Concluding Remarks for CS Motion Detection</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>6cab60b6-ad95-46ea-aa8d-53ab4c672d7f</md:uuid>
+</metadata>
+  <content>
+    <para id="element-50">The most important result that we have obtained is that the speed of a known moving object in the direction of motion can be extracted from the compressed sensing data using a very small number of coefficients, of a size less than 1% of a corresponding pixel image. Despite taking only fifty or a few hundred measurements from the set of random basis coefficients, the speed information is still present and can be extracted.</para><para id="element-218">However, there is a resolution limit on the speeds that can be detected for the moving objects. As discussed in the analysis, when there are no overlapping pixels in successive frames for the same data, there is no way to distinguish between speeds above this threshold.</para><para id="element-456">We use Parsevals Theorem to explain the linear relationship of the average squared change and velocity for a moving rectangle. </para>   
+  </content>
+  
+</document>

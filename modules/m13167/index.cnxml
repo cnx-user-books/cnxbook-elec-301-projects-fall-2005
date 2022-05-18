@@ -1,0 +1,52 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Overall Results and Conclusions</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>efab6920-841c-4792-8915-7e3efaf10283</md:uuid>
+</metadata>
+<content>
+<para id="id51641480">Using a function to repeatedly analyze ECGs
+with our algorithm, we obtained rates of correctly identifying the
+right type of rhythm and heart rate for specified noise levels. We
+then plotted these rates versus the corresponding SNR value for
+each noise level to see how much noise we could tolerate before we
+could no longer accurately detect the signal’s information. Below
+are these particular graphs for an 80 BPM Sinus wave, a 100 BPM
+Inverted T wave, and a 108 BPM Ventricular Tachycardia wave.</para>
+<figure id="id2737247">
+<media id="idm2551392" alt=""><image src="../../media/Graphic1-dd3f" mime-type="image/jpeg"/></media>
+</figure>
+<figure id="id50585265">
+<media id="idm8714864" alt=""><image src="../../media/Graphic2-efc8" mime-type="image/jpeg"/></media>
+</figure>
+<figure id="id51421527">
+<media id="idm2041472" alt=""><image src="../../media/Graphic3-c246" mime-type="image/jpeg"/></media>
+</figure>
+<figure id="id50594866">
+<media id="idp692656" alt=""><image src="../../media/Graphic4-166a" mime-type="image/jpeg"/></media>
+</figure>
+<figure id="id6074880">
+<media id="idp341936" alt=""><image src="../../media/Graphic5" mime-type="image/jpeg"/></media>
+</figure>
+<figure id="id51612477">
+<media id="idm2073600" alt=""><image src="../../media/Graphic6" mime-type="image/jpeg"/></media>
+</figure>
+<para id="id2786627">As shown in the graphs, all signals can be
+correctly identified with a SNR as low as 4, at which point the
+Sinus wave starts to look like a Ventricular Tachycardia wave due
+to noise. The other two signals we tested correctly identify the
+rhythm all the way down to a SNR of about 1.5. As far as heart rate
+goes, the Sinus and Inverted T wave always calculate the correct
+hear rate within two beats per minute for all signals with a SNR as
+low as 3, while a Ventricular Tachycardia signal can only do so.
+For practical purposes the one to two beat deviation in beats per
+minute may be considered negligible as all patients exhibit slight
+variances in heartrate from one moment to the next and such a small
+variance is insignificant for medical purposes anyway.</para>
+<para id="id51759878">The fact that the filter and the deciphering
+algorithm can tolerate such low signal to noise ratios shows great
+promise. Though this success rate may be lowered slightly as we add
+more signal types to be identified, it seems fairly certain that
+even for a relatively large number of signal types we would still
+be able to identify the correct rhythm for any reasonable SNR
+value.</para>
+</content>
+</document>

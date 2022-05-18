@@ -1,0 +1,52 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Feature Extraction from CS Data</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>4622c049-0cd2-4d23-8d4e-c995ff01712f</md:uuid>
+</metadata>
+<content>
+<section id="id17625558">
+<title>Can Random Noise Yield Specific Information?</title>
+<para id="id15468384">The novel challenge with using random basis
+projections for intelligent motion detection is that there is no
+spatial information about the image or movie in the compressed
+sensing data. Traditional pixel-based cameras provide a graph of
+light intensity over position and, logically, most pixel-based
+detection approaches use the information about where the motion
+occurs to help classify it. [1] The CS data provides us not with
+intensity at a point, but with the similarity (inner product)
+between the original pixel image and a selection of basis elements
+composed of random noise spread throughout the image plane.
+Intelligent detection for CS, therefore, must use approaches
+radically different from detection used on conventional
+video.</para>
+</section>
+<section id="id5289849">
+<title>Simplicity for Low Power</title>
+<para id="id17338241">A key feature of CS systems is the potential
+for extremely low power consumption. To keep the overall power of
+the system low, any computations we perform must be low power as
+well. For practical application, the algorithms chosen must be simple to compute.</para>
+</section>
+<section id="id17755495">
+<title>Investigation Goals</title>
+<para id="id17130829">Working in a very new field, we began our
+project with the open-ended goal of researching what types of
+motion can be detected using compressed sensing and of implementing
+at least one such measurement. After much deliberation and trial,
+we chose to implement speed detection, specifically calculating the
+speed of a known object along the direction of motion. (Different
+shapes complicate the problem, as we will discuss.) Looking ahead
+to more sophisticated detection, we also wanted an extensible
+system to use the results of several relevant calculations to
+automatically characterize motion.</para>
+<para id="id17014868">Though beyond the scope of our investigation,
+our motivation is a camera running our intelligent detection system
+capable of determining if a desired type of motion is observed. We
+pursue algorithms which could be implemented in real time at the
+data collection point.</para>
+
+</section><para id="element-818"> [1] For some interesting work in intelligent
+detection with traditional cameras, see the work of James W. Davis
+and Aaron F. Bobick out of the MIT Media Laboratory in the late
+1990s.</para>
+</content>
+</document>

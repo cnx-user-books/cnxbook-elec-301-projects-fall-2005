@@ -1,0 +1,162 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Experimental Data and Results</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>dde241f0-d0e4-4d24-8602-c8f5bf7ef4ab</md:uuid>
+</metadata>
+<content>
+<section id="data"><title>Experimental Data</title>
+<section id="training"><title>Training</title>
+<para id="id27337615">For our training set, we used purely
+monophonic recordings to ease manual classification. One full
+chromatic scale was recorded for each of our three instruments. We
+note that our training is weak, as we only provided one recording
+for each instrument. By covering the full range of the instrument,
+we give roughly equal weights to every note, whereas most
+instruments have a standard playing range and rarely play in the
+lower or upper limits or their range. Since the spectrum is more
+apt to skewing effects in the extreme ranges, our average spectral
+envelope and training features are also negatively affected.</para>
+<para id="id52062618">Finally, if we wanted our training set to
+perform better with polyphonic recordings, we would in practice
+also provide a few polyphonic recordings as part of our training
+set. This would allow features unique to polyphonic environments to
+be modeled as well. For example, a clarinet and trumpet usually
+cover the melody and are therefore more predominant than a tenor
+saxophone.</para>
+</section>
+<section id="testing"><title>Testing</title>
+<para id="id5644562">One short monophonic tune per instrument was
+recorded, as well as two short polyphonic tunes with each
+instrument combination (clarinet + saxophone, clarinet + trumpet,
+saxophone + trumpet, all), generating a total of 9
+recordings.</para>
+</section>
+</section>
+<section id="results"><title>Results</title>
+<section id="self-validation"><title>Self-Validation</title>
+<para id="id5378470">We first tested our GMM with the training set
+to determine how accurate it would be at classifying the data that
+trained it. The confusion matrix is shown below. (Our confusion
+matrix shows the actual classification at the left, and the
+predicted classification at the top.)</para>
+<table id="id4732743" summary="">
+<tgroup cols="4">
+<tbody>
+<row>
+<entry/>
+<entry>Clarinet</entry>
+<entry>Saxophone</entry>
+<entry>Trumpet</entry>
+</row>
+<row>
+<entry>Clarinet</entry>
+<entry>90.0%</entry>
+<entry>7.5%</entry>
+<entry>2.5%</entry>
+</row>
+<row>
+<entry>Saxophone</entry>
+<entry>2.9%</entry>
+<entry>92.3%</entry>
+<entry>4.9%</entry>
+</row>
+<row>
+<entry>Trumpet</entry>
+<entry>0.9%</entry>
+<entry>11.5%</entry>
+<entry>87.5%</entry>
+</row>
+</tbody>
+</tgroup>
+<caption><emphasis>Table 1:</emphasis> Confusion matrix for instrument
+recognition with training data.</caption>
+</table>
+</section>
+<section id="mono"><title>Monophonic Recordings</title>
+<para id="id26380148">Satisfied that our GMM could classify the
+training data accurately, we then tested it on a new set of
+monophonic recordings.</para>
+<table id="id27714614" summary="">
+<tgroup cols="4">
+<tbody>
+<row>
+<entry/>
+<entry>Clarinet</entry>
+<entry>Saxophone</entry>
+<entry>Trumpet</entry>
+</row>
+<row>
+<entry>Clarinet</entry>
+<entry>67.0%</entry>
+<entry>15.1%</entry>
+<entry>17.9%</entry>
+</row>
+<row>
+<entry>Saxophone</entry>
+<entry>19.7%</entry>
+<entry>73.0%</entry>
+<entry>7.3%</entry>
+</row>
+<row>
+<entry>Trumpet</entry>
+<entry>1.0%</entry>
+<entry>14.9%</entry>
+<entry>84.1%</entry>
+</row>
+</tbody>
+</tgroup>
+<caption><emphasis>Table 2:</emphasis> Confusion matrix for instrument of
+single notes from monophonic recordings.</caption>
+</table>
+<para id="id52472285">Average instrument identification using our
+GMM was 75%, whereas pure guessing would land us at 33.3%. We also
+see that in our test data, the clarinet and saxophone are confused
+the most often and can therefore be considered the most similar.
+This makes sense as both belong to the same instrument family
+(woodwinds), whereas a trumpet is a brass instrument. In contrast,
+the clarinet and the trumpet were confused the least often, which
+is also as expected since their spectrum represent the two extremes
+within our tested instruments. We are unsure of why the clarinet is
+often mistaken as a trumpet, but a trumpet is not mistaken as a
+clarinet, but we believe part of the problem may lie again in our
+training data, as the self-validation tests showed that the
+clarinet and trumpet were almost exclusive of one another, and our
+GMM may have started to memorize the training data.</para>
+<para id="id15639075">The following figures show the performed
+piece of music and the results of our detection and classification
+algorithm. We note that some discrepancies are due to player error
+(key fumbles, incorrect rhythmic counting, etc). We follow our
+coloring scheme of blue representing clarinet, green saxophone, and
+red trumpet.</para>
+<figure id="id3734382" orient="vertical">
+<subfigure id="id373483"><media id="idp2447504" alt=""><image src="../../media/Graphic1-c7b0" mime-type="image/jpeg"/></media>
+</subfigure>
+<subfigure id="id51786960">
+<media id="idp1001376" alt=""><image src="../../media/Graphic2-4ace" mime-type="image/jpeg"/></media>
+</subfigure>
+<caption>Original score versus output from
+our algorithm for a monophonic trumpet tune.</caption>
+</figure>
+</section>
+<section id="poly"><title>Polyphonic Recordings</title>
+<para id="id52493330">Finally, we input some polyphonic recordings
+and compared the experimental outputs to the input music.
+Quantitative validation is not provided, as it would require us to
+manually feed into the validation program which instruments at what
+time. Visually however, we can clearly see that our algorithm
+correctly separates the melody line, as played by the clarinet,
+from the lower harmony line, as played by the tenor
+saxophone.</para>
+<figure id="id27765952" orient="vertical">
+<subfigure id="id27765953">
+<media id="idm6710912" alt=""><image src="../../media/Graphic3-a79a" mime-type="image/jpeg"/></media>
+</subfigure>
+<subfigure id="id14616796">
+<media id="idp878816" alt=""><image src="../../media/Graphic4-cd98" mime-type="image/jpeg"/></media>
+</subfigure>
+<caption>Original score versus output from
+our algorithm for a polyphonic piece.</caption>
+</figure>
+</section>
+</section>
+</content>
+</document>

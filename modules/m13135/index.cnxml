@@ -1,0 +1,34 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>The Team and Acknowledgements</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>bf09bd17-9c4d-4b4b-bc36-fcb9f8c882c2</md:uuid>
+</metadata>
+<content>
+<section id="id14372969">
+<title>The Team</title>
+<figure id="element-825">
+<media id="idp5983712" alt=""><image src="../../media/Us.jpg" mime-type="image/jpeg"/></media>
+<caption>Grant Lee, Heather Johnston, Siddharth Gupta, Veena Padmanabhan</caption></figure><para id="id26681045">Grant Lee, Heather Johnston, Siddharth Gupta
+and Veena Padmanabhan are Electrical Engineering majors at Rice
+University, Houston, TX. They are all in their third year of study
+and are all currently pursuing Signals and Systems as their
+specialization.</para>
+</section>
+<section id="id25207213">
+<title>Acknowledgements</title>
+<para id="id26347366">During our project, we were extremely
+fortunate to receive invaluable assistance from several people. We
+can not thank you enough:</para>
+<para id="id27929490">Dr. Richard Baraniuk, our professor, for
+pointing us in the right direction time and again.</para>
+<para id="id27506729">Ilan Goodman, for providing his motion
+detection code, numerous explanations, and his intuition analyzing
+our early results.</para>
+<para id="id27931679">Marco Duarte, for his explanation of
+compressed sensing.</para>
+<para id="id26837055">Mark Davenport, for his explanation of
+support vector machines.</para>
+<para id="id26836662">Bruce Flinchbaugh, Texas Instruments, for
+sources on traditional intelligent motion detection.</para>
+</section>
+</content>
+</document>

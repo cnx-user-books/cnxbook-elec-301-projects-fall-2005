@@ -1,0 +1,93 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Neural Network-based Accent Classification Results</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>8eb014d0-6a4a-47d6-8250-733cf14ed74d</md:uuid>
+</metadata>
+<content>
+<section id="results">
+  <title>Results</title> 
+<para id="id52058566">The following are some example outputs from
+the neural network from various test speakers. The output displays
+relative strengths of different types of accents prevalent in a
+particular subject. All test inputs were not used in the training
+matrix. Overall, approximately 20 tests were conducted with about
+an 80% success rate. Those that failed tended to with good reason
+(either inadequate recording quality, or speakers who did not
+provide accurate information about what their accent is comprised
+of – a common issue with subjects who have lived in multiple
+places).</para>
+
+
+<para id="element-8">The charts below show accents in the following order: Northern US, Texan US, Russian, Farsi, and Mandarin</para><section id="test1">
+  <title>Test 1: Chinese Subject</title>
+<figure id="cs1"><title>Chinese Subject</title>
+<media id="idm1923120" alt=""><image src="../../media/test1-china-northeast.jpg" mime-type="image/jpeg" height="400" width="600"/></media>
+<caption>Chinese Subject (accent order: Northern US, Texan US, Russian, Farsi, and Mandarin)</caption></figure> 
+<media id="idm9350928" alt="" display="block"><audio src="test1-china-northeast.mp3" mime-type="audio/mpeg"/></media>
+</section>
+
+<para id="element-166"> Here our network has successfully picked out the accent of our subject. Secondarily, the network picked up on a slight Texan accent, possibly showing the influence of location on the subject (The sample was recorded in Texas).</para><section id="test2">
+  <title>Test 2: Iranian Subject</title>
+<figure id="is1"><title>Iranian Subject</title>
+<media id="idm988256" alt=""><image src="../../media/test2-farsi-11.jpg" mime-type="image/jpeg" height="400" width="600"/></media>
+<caption>Iranian Subject (accent order: Northern US, Texan US, Russian, Farsi, and Mandarin)</caption></figure> 
+<media id="idp401280" alt="" display="block"><audio src="test2-farsi-11.mp3" mime-type="audio/mpeg"/></media>
+</section> 
+
+<para id="element-706">  Again our network has successfully picked out the accent of our subject. Once again, this sample was recorded in Texas, which could account for the secondary influence of a Texan accent in the subject.</para><section id="test3">
+  <title>Test 3: Chinese Subject</title>
+<figure id="cs2"><title>Chinese Subject</title>
+<media id="idm8342416" alt=""><image src="../../media/test3-mandarin-6.jpg" mime-type="image/jpeg" height="400" width="600"/></media>
+<caption>Chinese Subject (accent order: Northern US, Texan US, Russian, Farsi, and Mandarin)</caption></figure> 
+<media id="idm902304" alt="" display="block"><audio src="test3-mandarin-6.mp3" mime-type="audio/mpeg"/></media>
+</section>
+
+<para id="element-433">Once again, the network successfully picks up on the subjects primary accent as well as influence of a Texan accent (this sample was also recorded in Texas).</para><section id="test4">
+  <title>Test 4: Chinese Subject</title>
+<figure id="cs3"><title>Chinese Subject</title>
+<media id="idm7663968" alt=""><image src="../../media/test4-mandarin-10.jpg" mime-type="image/jpeg" height="400" width="600"/></media>
+<caption>Chinese Subject (accent order: Northern US, Texan US, Russian, Farsi, and Mandarin)</caption></figure> 
+<media id="idm1429136" alt="" display="block"><audio src="test4-mandarin-10.mp3" mime-type="audio/mpeg"/></media>
+</section> 
+
+<para id="element-247">A successful test showing little or no influence from other accents in the network.</para><section id="test5">
+  <title>Test 5: American Subject (Hybrid of Regions)</title>
+<figure id="ash"><title>American Subject (Hybrid)</title>
+<media id="idm1259952" alt=""><image src="../../media/test5-northern-test-7.jpg" mime-type="image/jpeg" height="400" width="600"/></media>
+<caption>American Subject - Hybrid (accent order: Northern US, Texan US, Russian, Farsi, and Mandarin)</caption></figure> 
+<media id="idm1631424" alt="" display="block"><audio src="test5-amer-south-north-test7.mp3" mime-type="audio/mpeg"/></media>
+</section> 
+
+<para id="element-430"> Results from a subject who has lived all over -- mainly in Texas, who's accent appears to sound more Northern (which seems relatively true if one listens to the source recording).</para><section id="test6">
+  <title>Test 6: Russian Subject</title>
+<figure id="rs1"><title>Russian Subject</title>
+<media id="idm7874720" alt=""><image src="../../media/test6-russian-8.jpg" mime-type="image/jpeg" height="400" width="600"/></media>
+<caption>Russian Subject (accent order: Northern US, Texan US, Russian, Farsi, and Mandarin)</caption></figure> 
+<media id="idp535360" alt="" display="block"><audio src="test6-russian-8.mp3" mime-type="audio/mpeg"/></media>
+</section>
+
+<para id="element-350"> Successful test of a Russian subject with strong influences of a Northern US accent.</para><section id="test7">
+  <title>Test 7: Russian Subject</title>
+<figure id="rs2"><title>Russian Subject</title>
+<media id="idp4607344" alt=""><image src="../../media/test7-russian-test-8.jpg" mime-type="image/jpeg" height="400" width="600"/></media>
+<caption>Russian Subject (accent order: Northern US, Texan US, Russian, Farsi, and Mandarin)</caption></figure> 
+<media id="idm1767136" alt="" display="block"><audio src="test7-russian11-test8.mp3" mime-type="audio/mpeg"/></media>
+</section> 
+
+<para id="element-318"> Another successful test of a Russian subject with strong influences of a Northern US accent.</para><section id="test8">
+  <title>Test 8: Cantonese Subject</title>
+<figure id="cas1"><title>Cantonese Subject</title>
+<media id="idm1759360" alt=""><image src="../../media/test8-wai-lam1.jpg" mime-type="image/jpeg" height="400" width="600"/></media>
+<caption>Cantonese Subject (accent order: Northern US, Texan US, Russian, Farsi, and Mandarin)</caption></figure> 
+<media id="idm1289216" alt="" display="block"><audio src="test8-wai-lam.mp3" mime-type="audio/mpeg"/></media>
+</section> 
+
+<para id="element-337"> Successful region-based test of a Cantonese subject who has been living in the US.</para><section id="test9">
+  <title>Test 1: Korean Subject</title> 
+<figure id="ks1"><title>Korean Subject</title>
+<media id="idm1289936" alt=""><image src="../../media/test9-korean-3.jpg" mime-type="image/jpeg" height="400" width="600"/></media>
+<caption>Korean Subject (accent order: Northern US, Texan US, Russian, Farsi, and Mandarin)</caption></figure> 
+<media id="idp1060656" alt="" display="block"><audio src="test9-korean-3.mp3" mime-type="audio/mpeg"/></media> 
+</section><para id="element-32"> An interesting example of throwing an accent at the network that doesn't fit into any of the categories.</para>
+</section>
+</content>
+</document>

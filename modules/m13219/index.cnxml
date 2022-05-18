@@ -1,0 +1,26 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Demonstrations of Seeing using Sound</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>87fb7a55-81e2-4a51-97ee-2e46df25d82e</md:uuid>
+</metadata>
+  <content>
+<para id="element-365"> For each example, right click on the link to the corresponding sound  and go to "Save Link Target As..." to download and play it.</para><section id="idp1639440">
+<title>Examples</title>
+    <figure id="element-524"><title>Identity Matrix</title>
+<media id="idm6676512" alt=""><image src="../../media/identity.jpg" mime-type="image/jpeg"/></media>
+<caption>Our Simplest Example - <link resource="identity.au">Listen</link> </caption></figure>
+<figure id="heart"><title>X Matrix</title>
+<media id="idp771984" alt=""><image src="../../media/crisscross.jpg" mime-type="image/jpeg"/></media>
+<caption><link resource="crisscross.au">Listen</link> </caption></figure>
+<figure id="x"><title>Edge Detected Heart</title>
+<media id="idm543856" alt=""><image src="../../media/hearta.jpg" mime-type="image/jpeg"/></media>
+<caption><link resource="heart.au">Listen</link> </caption></figure>
+<figure id="door"><title>Front Door Repeated</title>
+<media id="idm7162240" alt=""><image src="../../media/cdoora.jpg" mime-type="image/jpeg"/></media>
+<caption>Our Hardest Example - Not for beginners! - <link resource="cdoor.au">Listen</link> </caption></figure>
+<para id="delete_me">
+       <!-- Insert module text here -->
+    </para>   
+</section>
+  </content>
+  
+</document>

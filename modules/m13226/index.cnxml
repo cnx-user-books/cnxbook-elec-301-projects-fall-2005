@@ -1,0 +1,27 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Seeing using Sound's Mapping Algorithm</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>cdcccf09-c968-4080-9aad-08681b9ce524</md:uuid>
+</metadata>
+  <content>
+    <para id="delete_me">The mapping algorithm is the piece of the system that takes in an edge-detected image, and produces a sound clip representing the image.  The mapping as we implemented it takes three steps:
+<list id="steps" list-type="bulleted">
+  <item>Vertical Mapping</item>
+  <item>Horizontal Mapping</item>
+  <item>Color Mapping</item>
+</list> </para>
+<figure id="element-105"><title>Mapping Diagram</title>
+<media id="idp7028528" alt=""><image src="../../media/door_graph.jpg" mime-type="image/jpeg"/></media>
+<caption>Illustration of our mapping algorithm</caption></figure><section id="idm784048">
+<title>Vertical Mapping</title>
+<para id="element-92">The first step of the algorithm is to map the vertical axis of the image to the frequency content of the output sound at a given time.  We implemented this by having the relative pitch of the output at that time correspond to rows in each column that have an edge.  Basically, the higher the note you hear, the higher it is in your field of vision, and the lower the note, the lower in  your field of vision.  </para>   </section>
+<section id="idm348832">
+<title>Horizontal Mapping</title>
+<para id="element-141">Next, we need some way of mapping the horizontal axis to the output sound.  We chose to implement this by having our system "sweep" the image from the outside-in in time (see figure 1).  The reasoning behind this is that the focus of the final sound should be the center of the field of vision, so we have everything meeting in the middle.  This means that each image will have some period that it will take to be "displayed" as sound.  The period begins at some time t0, and, with stereo sound, the left and right channels start sounding notes corresponding to edges on each side of the image, finally meeting in the middle at some time tf.  </para>
+</section>
+<section id="idp8529008">
+<title>Color Mapping</title>
+<para id="color">Using scales instead of continuous frequencies for the notes gives us some extra information to work with.  We decided to also try to incorporate the color from the original image of the point at an edge.  We were able to do this by letting the brightness of the scale that we use.  For example, major scales sound much brighter than minor scales, so bright colors correspond to major scales, and darker ones correspond to minor.  This effect is difficult to perceive for those that aren't trained, but we believe that the brain can adapt to this pattern regardless of whether or not the user truly understands the mapping. </para>
+</section>
+  </content>
+  
+</document>

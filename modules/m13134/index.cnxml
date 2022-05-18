@@ -1,0 +1,25 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Idealized Data for Motion Detection</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>37eabeca-b155-4b02-99a1-73b3c06450a7</md:uuid>
+</metadata>
+<content>
+<para id="id12543214">The main purpose of our device is to detect velocity of motions in a movie file, and it is helpful to understand the mechanism in idealized cases. It is too complicated to come up with appropriate algorithms for all possible input data at once, and we want to look at the simpliest cases first. Our choice of data is a simulated movie. Reducing to bare bones, a blank, constant background(noise-free) with a single object moving across the screen is a good start. </para>
+<section id="makingframes"><title>Making Frames</title>
+<para id="element-540">
+Manual coding of movies was done in MATLAB, using matrices of zeros and ones. zeros represents background, and ones represent an object. For simplicity, movies are in grayscale (black for zeros and white for ones).</para><example id="element-4"><figure id="element-583"><title>Matrix To Frame</title>
+<media id="idm277776" alt=""><image src="../../media/matrixpicture.PNG" mime-type="image/png"/></media>
+<caption>Command 'imagesc(matrix)' on MATLAB will give us a simple picture</caption></figure></example><para id="element-655">Looking at above matrix, different shapes can easily be made by arranging the ones in different layouts. We have created square, vertical rectangle, horizontal rectangle, triangle, and circle shapes. Once a desired image with an object is created, the 'getframe' command in MATLAB converts images to frames.</para>
+</section>
+<section id="movies"><title>Making Movies</title>
+<para id="element-201">
+To make a movie of a "moving" object (represented as a group of ones), our program can simply create multiple frames with the group of ones in different locations. One can move most any object in any direction in a reasonable frame size. However, creating a movie with non-axial motion can be very tedious in MATLAB, so we chose motions along the horizontal and vertical axis.</para><note id="idp1267168">  For our purpose, we set the screen size to be 256x256. Each pixel corresponds to one entry in the matrix.</note><example id="element-901"><figure id="element-503"><title>Moving Square</title>
+<media id="idp205920" alt=""><image src="../../media/square-movein.png" mime-type="image/png"/></media>
+<caption>Square moving into the screen</caption></figure><figure id="element-212">
+<media id="idp90864" alt=""><image src="../../media/square-in.png" mime-type="image/png"/></media>
+<caption>Square in the screen</caption></figure></example><para id="element-632">Different velocities can be achieved by varying number of pixels moved over per frame. In other words, within the same number of frames, a movie with a faster object will have its object moved over further across the screen than one with a slower object.</para><example id="element-837"><figure id="element-561"><title>Moving Triangle With Different Speeds</title>
+<media id="idm5441888" alt=""><image src="../../media/triangle10pf.PNG" mime-type="image/png"/></media>
+<caption>Triangle moving at 10 pixels per frame</caption></figure><figure id="element-133"><media id="idp721584" alt=""><image src="../../media/triangle50pf.PNG" mime-type="image/png"/></media>
+<caption>Triangle moving at 50 pixels per frame</caption></figure></example>
+</section>
+</content>
+</document>

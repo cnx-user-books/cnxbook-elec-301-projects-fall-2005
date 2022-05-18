@@ -1,0 +1,18 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Future Work in CS Motion Detection</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>eb98b45f-ea77-4586-ab37-a68c753d7e5d</md:uuid>
+</metadata>
+<content>
+<para id="id26681928">There are many future directions that we can
+foresee for intelligent motion analysis on compressed sensing data
+due to the minimal computation and data storage required.</para>
+<para id="id26445692">One major point of future study is the
+feature extraction algorithms for compressed sensing. Our analysis
+looked at only a very small part of the many features that we think
+can be gleaned from the compressed sensing measurements. For example we can look at the acceleration, which could be trivial using the difference in the velocity feature.  Our calculation of total intensity can also be fully exploited. Similarly, we believe it is possible to develop algorithms for shape recognition.</para>
+<para id="id26411308">When the number of feature calculations availiable increases, a <link document="m13131">Support Vector Machine (SVM)</link> can be used to analyze the data. The SVM is a prediction algorithm which after being
+trained with sufficient data can classify new data on the basis of
+the training. This is very useful when the data is
+multi-dimensional.</para>
+</content>
+</document>

@@ -1,0 +1,33 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>System Overview</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>3484b436-b541-483e-a0b9-8423a6a35e7e</md:uuid>
+</metadata>
+<content>
+<figure id="id11430549">
+<title>Pitch and Instrument Recognition System
+Diagram</title>
+<media id="idm637920" alt=""><image src="../../media/Graphic1-a732" mime-type="image/jpeg"/></media>
+<caption>System Flowchart.</caption>
+</figure>
+<para id="id11038905">The system takes some training songs and
+creates an output vector of features that characterize the signal.
+A Gaussian mixture model (GMM) is trained to identify patterns and
+predict an output instrument classification given a set of
+features.</para>
+<para id="id12365998">Each digitized signal was windowed into
+smaller chunks for feature processing. In training, features were
+calculated for each window and concatenated into a single vector to
+be fed into the GMM for training. In testing, features were
+calculated for each window and fed into the GMM for classification.
+If multiple notes were to be detected, we recurred on the same
+window until we found the maximum number of notes or until a note
+could no longer be detected (as evaluated using a cutoff threshold
+for what constitutes silence).</para>
+<para id="id13082594">From a user standpoint, the user must input a
+set of training songs, which includes a wav file and the instrument
+that produced the sound at specific times. Once the system is
+trained, the user can then input a new song, and our algorithm will
+output the song in “piano roll” format, i.e. the pitch and
+instrument of notes plotted over time.</para>
+</content>
+</document>

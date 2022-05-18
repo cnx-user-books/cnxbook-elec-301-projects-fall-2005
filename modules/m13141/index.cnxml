@@ -1,0 +1,35 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Ability to Detect Speed: Results</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f3c15a5b-ff5a-4eac-891e-5b54133c676d</md:uuid>
+</metadata>
+  <content>
+    <para id="delete_me">The results of running our intensity and average change calculations on CS data on objects moving at different speeds shows that a fully deterministic relationship exists between our calculations and the speed of the object along the direction of motion.</para>
+<para id="element-520"> Recall our three calculations: Total intensity is a measurement of non-zero area in a single frame.  Mean absolute change is the absolute value of the average change between basis projections in subsequent frames. Mean change squared is the mean of the squared difference between basis projections in subsequent frames.</para><section id="bfeatex"><title>Calculations Performed on Each Movie Clip</title>
+<para id="element-288"> The three calculations were computed for every frame of a movie clip.  Sample results of the metrics over time are shown below.</para><example id="element-107"><figure id="element-719"><title>Mean Magnitude of Coefficient Differences (2pixels/frame)</title>
+<media id="idm9743824" alt=""><image src="../../media/2pf2.png" mime-type="image/png"/></media>
+<caption>These metrics were extracted from a movie of a standing rectangle moving uniformly across the screen at 2 pixels per frame</caption></figure><figure id="element-231"><title>Mean Magnitude of Coefficient Differences (18pixels/frame)</title>
+<media id="idm2600496" alt=""><image src="../../media/18pf2.png" mime-type="image/png"/></media>
+<caption>These metrics were extracted from a movie of a rectangle moving uniformly across the screen at 18 pixels per frame.  The horizontal axis in each graph is time.</caption></figure><para id="element-997">Since the video clips analyzed contained an object moving at constant velocity, it is expected that the average absolute and squared changes would be constant across a frame.  The noise in the data comes from the random nature of the basis used.</para></example></section>
+<section id="featex"><title>Velocity Trends</title>
+<para id="element-939">To plot average mean and absolute change with respect to velocity, the average value of each calculation is taken from the above data.  The results are graphed below.
+
+</para><para id="element-981"> The first three graphs show variations in absolute mean differences with respect to velocity for different shapes.  Each shape has a unique curve because of the shape of image overlap for different speeds. As future work, these minor differences could allow us to distinguish shapes from such data. The trends observed here are not linear, but a fit curve can easily be generated from a few data points and used to classify new data.  Since the calculation of this feature is very simple, it could be implemented in low power applications.</para><figure id="element-61">
+<media id="idm1180944" alt=""><image src="../../media/VerticalRectanglemean2.png" mime-type="image/png"/></media>
+<caption>Absolute Average Change (AAC) vs. pixels/frame</caption></figure><figure id="element-392">
+<media id="idm9254912" alt=""><image src="../../media/Trianglemean2.png" mime-type="image/png"/></media>
+<caption>Absolute Average Change (AAC) vs. pixels/frame</caption></figure><figure id="element-649">
+<media id="idm1924496" alt=""><image src="../../media/Circlemean2.png" mime-type="image/png"/></media>
+<caption>Absolute Average Change (AAC) vs. pixels/frame</caption></figure><para id="element-746"><title>Linear Relationship</title>
+With help from Ilan Goodman, we saw that Parseval's theorem dictates that the two-norm of the change in area is linearly proportional to the two-norm of the change in the compressed sensing coefficients.  Since the change in area is linear in velocity for rectangles, this predicts that the average squared change will be linear for a rectangle.  This relationship is supported by our data.
+</para><figure id="element-233"><title>Mean Change Square for Vertical Rectangle</title>
+<media id="idm2663200" alt=""><image src="../../media/VerticalRmeansquared2.png" mime-type="image/png"/></media>
+<caption>As predicted by Parseval's, we observed a linear relationship in the Average Squared Change (ASC) plot</caption></figure><para id="element-373"> The linear relationship does not hold for other shapes because the overlap between frames is not linear in velocity.</para><figure id="element-76"><title>Mean Change Squared for Triangle</title>
+<media id="idm880672" alt=""><image src="../../media/Trainglemeansquared2.png" mime-type="image/png"/></media>
+<caption>For a triangle, we see a non-linear dependency on ASC curve.</caption></figure><figure id="element-866"><title>Mean Change Squared for Circle</title>
+<media id="idm458512" alt=""><image src="../../media/Circlemeansquared2.png" mime-type="image/png"/></media>
+<caption>A circle does not show a linear dependency on ASC curve either.</caption></figure></section><para id="element-209">The velocity of a known object can be determined using a fit of this data for any shape object. However, there exists an upper bound to the velocities that we can detect. Consider an object of size x pixels along the direction of motion. Once the velocity exceeds x pixels per frame, the amount of overlap has already gone to zero and the exact velocity cannot be determined. This can be described as analogous to aliasing. </para><figure id="element-504"><title>Velocity Detection Upper Limit</title>
+<media id="idm9084528" alt=""><image src="../../media/VerticalRlarger.JPG" mime-type="image/jpeg"/></media>
+<caption>Above the velocity resolution limit of 35 pixels/frame, the velocity cannot be determined.  The data for high velocities contains fewer datapoints and has a greater deviation. </caption></figure>   
+  </content>
+  
+</document>

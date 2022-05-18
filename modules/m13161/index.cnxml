@@ -1,0 +1,117 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Delay and Sum Beamforming with a 2D Array: Introduction</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>da5617b2-a142-472b-8f69-e7f3fff3885f</md:uuid>
+</metadata>
+  <content>
+<section id="intro">
+  <title>1. Introduction</title>
+    <para id="delete_me">Beamforming is the discipline that takes a set of microphones, usually in an
+array, and a set of point source signals (in a space that we assumed to be R3 or
+very nearly so) and tries to focus on one signal source to the exclusion of both
+noise and other signal sources. In this <link document="col10315">project</link>, we assume a single source
+and use the old and powerful technique of delay and sum beamforming implemented over a 2-dimensional array arranged as a 3 by 3 square with the
+center missing. Having a 2-dimensional array allows the location of a source
+to be determined up to an ambiguity of reflection across plane of the array.</para> 
+</section> 
+
+<section id="das">
+  <title>2. Delay and Sum Beamforming</title>
+    <para id="das1">Delay and sum beamforming is quite true to its name as it merely takes the
+set of signals, delays and maybe weights them by varying amounts, and then
+adds them all together. The size of the delays is determined by the direction
+(for farfield) or point (for nearfield) at which the set of microphones is aimed. Despite its simplicity, delay and sum manages to achieve optimal noise
+suppression for the case of a point source in a background of white noise. Of
+course, normal signal processing applies, and one can do better than just delay
+and sum if information about the signal other than location is known a priori.
+For example, if it is known that the signal is bandlimited and baseband, then
+a suitable lowpass filter can be applied to further suppress noise.</para>
+
+<section id="nearfield">
+  <title>2.1 Nearfield Processing</title>
+    <para id="near-1">Though not implemented, nearfield calculations are both more computationally
+intensive and accurate. If it is assumed that the microphones have some
+sort of center for distance, then the center can be designated as the origin
+for the coordinate system. A point source at a point (xs, ys, zs) would then
+emit a signal s(t). A microphone at a point (xm, ym, zm) would then receive
+a signal m(t). Assuming that signal propogates uniformly with speed v and
+that signal strength is equal to the original signal strength divided by the
+square of the distance, we can conclude that the received signal is:</para><figure id="element-530">
+<media id="idp7359328" alt=""><image src="../../media/equation.jpg" mime-type="image/jpeg"/></media>
+</figure>
+
+</section>
+
+<section id="farfield">
+  <title>2.2 Farfield Processing</title>
+     <para id="far-1">In this project, it was assumed that the array was always operating in farfield,
+an approximation in which the source is assumed to be far enough away that
+the spherical waves it emits can be approximated with plane waves. It is
+accurate in the limit where the distance between the microphones and the source
+is large enough so that the angle between the source and each microphone
+does not change significantly.</para>
+</section>
+</section>
+
+<section id="problems">
+  <title>3. Complications</title>
+    
+<section id="quant">
+  <title>3.1 Time Quantization</title>
+    <para id="q-1">Since all of the processing is done in a digital environment, we must work
+with samples of the signals and not the signals themselves. Because of this,
+it is not possible to implement an arbitrary time shift as any shift must be
+done in increments of the sample period. To remedy this, the signals were
+interpolated digitally by upsampling them and then putting them through
+a lowpass filter with cutoff corresponding to the amount of upsampling. An
+equiripple filter was chosen for the lowpass filter as there appears to be no
+constraints as to the exact shape of the filter and because an equiripple
+filter would avoid the Gibb’s phenomena found in a direct approximation
+of an ideal lowpass filter. Using this interpolation, greater resolution can
+be achieved in the time shifts, though the drawback is the large amount of
+additional data that must now also be processed. In fact, even though the
+concept of delay and sum is incredibly simple, the amount of computation
+that must be done because of the upsampling is often prohibitively high. It is
+impossible for the amount of interpolation to be too high, but if it is too low,
+then it is entirely possible that the direction of the source will be inaccurate
+or entirely wrong as the algorithm will be unable to shift the signals to where
+they match enough. </para>
+</section>
+<section id="alias">
+  <title>3.2 Aliasing, Resolution, and Sampling Frequency</title>
+    <para id="alias-1">Given a fixed sampling frequency, there is always the ”normal” aliasing associated
+the Nyquist Theorem, restricting the fully reconstructable signals
+to those that are bandlimited to half of the sampling frequency. Something
+similar occurs with array spacing, and if proper care is not taken, aliasing
+may occur in spatial dimensions. Using the spatial analogue of the Nyquist
+Theorem, the minimum spacing between microphones must be at most half
+the wavelength corresponding to highest frequency present. Thus, to achieve
+any resolution at all for higher frequency signals, smaller arrays must be used;
+however, with a smaller array, the precision with which a direction can be
+determined is diminished. It appears that there is an uncertainty principal
+at odds with beamforming in its spatial dimensions.</para>
+</section>
+
+<section id="unknown">
+  <title>3.3 Unknown Source Location</title>
+    <para id="unk-1">This is the main focus of the project: to try to locate a source
+using an array of microphones and then focus the array in the direction of
+the source, obtaining greater suppression of noise than would be possible
+using only one microphone. Since the direction of the source is unknown,
+we decided to scan for the source by sweeping all possibilities. This is where
+the far field approximation significantly reduces computational complexity.
+Using nearfield, any algorithm would be forced to evaluate all possible combinations
+of three coordinates. With farfield, there are only two angles to
+deal with as opposed to three coordinates so there is far less to compute. </para><para id="element-912"> Due
+to lack of computing power, we were forced to make a few, less-than-desirable
+assumptions in order to make the algorithm run at all without crashing. One
+of these simplifications was using only three of the microphones to
+perform the sweep of possible angles. A further simplification was to assume
+that the three microphones could be broken into two pairs in the calculations
+for determining the pair of angles from which the maximum was coming from.
+Further, hardware and computer limitations limited sampling to a rate of 8000 Hz from each of eight microphones and made the processing cost of upsampling prohibitive beyond a factor of around 10.</para>
+</section>
+
+</section>
+  </content>
+  
+</document>

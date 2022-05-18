@@ -1,0 +1,34 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Compressed Sensing</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>49281458-9284-4681-aec1-e4ff5629adc2</md:uuid>
+</metadata>
+<content>
+<para id="id16212314">Compressed sensing is based on exploiting sparsity.  Sparse signals are those that can be represented as a combination of a small number of projections on a particular basis. (This new basis must be incoherent with the original basis.) Because of sparsity, the same signal can be represented with a smaller amount of data while still allowing for accurate reconstruction.</para>
+<para id="id15944216">In non-compressed sensing methods, one would first aquire a large amount of data, compute an appropriate basis and projections on it, and then trasmit these projections and the basis used. This is wasteful of resources since many more data points are initially collected than are transmitted. In compressed sensing, a basis is chosen that will approximately represent any input sparse signal, as long as there is some allowable margin of error for reconstruction.
+
+</para>
+<figure id="element-528"><title>Comparison of Data Aquisition Algorithms that Use Sparsity</title>
+<media id="idp9027328" alt=""><image src="../../media/blockdiagram.png" mime-type="image/png"/></media>
+<caption>Comparison of different algorithms. Our project focuses on the third algorithm using random basis projections.</caption></figure><para id="element-716"> 
+The pre-defined basis for the optimal case (as represented in the block diagram) can only be determined with prior knowledge of the signal to be aquired [1]. However, in practical applications such information is not usually known. 
+
+To generalize to a basis that gives sparse projections for all images, a random basis can be used. A matrix of basis elements is generated from random numbers such that the basis elements are normal and orthogonal on average. Since using projections on a random basis is not the optimally sparse case, a larger number of projections must be taken to allow for reconstruction [2],[3]. However, this number is still far fewer than the number of datapoints taken using the traditional approach which exploits sparsity after data acquisition. 
+</para>
+<para id="id16551320">One application of compressed sensing is an N-pixel camera being designed by Takhar et al. which acquires much fewer than N data points to record an image [4].</para>
+<para id="id16113127">For a more detailed explanation of compressed sensing, please refer
+to the literature on
+<link url="http://www.dsp.ece.rice.edu/cs">http://www.dsp.ece.rice.edu/cs</link></para>
+<para id="id16470801">[1] D. Baron, M. B. Wakin, S. Sarvotham, M.F. Duarte and R. G. Baraniuk, “Distributed Compressed Sensing,” 2005, Preprint.</para>
+<para id="id16384608">[2] E. Candes, J. Romberg, and T. Tao,
+“Robust uncertainty principles: Exact signal reconstruction from
+highly incomplete frequency information,” IEEE Trans. Inform.
+Theory, 2004, Submitted.</para>
+<para id="id16262716">[3] D. Donoho, “Compressed sensing,” 2004,
+Preprint.</para>
+<para id="id16423027">[4] D. Takhar, V. Bansal, M. Wakin, M.
+Duarte, D. Baron, K. F. Kelly, and R. G. Baraniuk, “A compressed
+sensing camera: New theory and an implementation using digital
+micromirrors,” in Proc. Computational Imaging IV at SPIE Electronic
+Imaging, San Jose, January 2006, SPIE, To appear.</para>
+</content>
+</document>

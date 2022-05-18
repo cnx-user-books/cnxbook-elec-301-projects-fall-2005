@@ -1,0 +1,17 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Introduction and Background for Seeing with Sound</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>4a165a59-0faa-4185-be3e-ba22786c8d93</md:uuid>
+</metadata>
+  <content>
+<section id="intro">
+  <title>Introduction</title> 
+    <para id="Introduction">Seeing with sound is our attempt to meaningfully transform an image to sound.  The motivation behind it is simple, to convey visual information to blind people using their sense of hearing.  We believe in time, the human brain can adapt to the sounds, making it a useful and worthwhile system.  </para>
+</section>
+<section id="probs">
+  <title>Background and Problems</title> 
+<para id="element-715"> 
+In researching for this project, we found one marketed product online, the, <link url="http://www.visualprosthesis.com/javoice.htm">vOICe</link>, that did just what we set out to do.  However, we believe that the <link url="http://www.visualprosthesis.com/javoice.htm">vOICe</link> is not optimum, and we have a few improvements in mind.  One idea is to make the center of the image the focus of the final sound.  We feel like the center of an image contains the most important information, and it gets lost in the left to right sweeping of <link url="http://www.visualprosthesis.com/javoice.htm">vOICe</link>.  Also, some of the images are far too "busy" to use their technique.  We the images need to be simplified so that only the most important information is conveyed in the sounds.  </para>   
+</section>
+  </content>
+  
+</document>

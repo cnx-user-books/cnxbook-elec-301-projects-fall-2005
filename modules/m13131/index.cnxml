@@ -1,0 +1,39 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Support Vector Machines</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>24400d02-64bd-4e9f-b435-9b530ddfdbe4</md:uuid>
+</metadata>
+<content>
+<para id="id12035242">A Support Vector Machine (SVM) is a decision-based prediction algorithm which can classify data into several
+groups. It is based on the concept of decision planes where the
+training data is mapped to a higher dimensional space and separated
+by a plane defining the two or more classes of data [1].</para>
+<para id="id12132718">A simple example is seen in <link target-id="ex2d">Figure 1</link>. Squares
+are data of class one while circles are data of class two. The SVM
+sets up the decision plane (in this case a simple line) and
+separates the two classes.</para>
+<figure id="ex2d"><title>2-D Example</title>
+<media id="idm746496" alt=""><image src="../../media/Ex1.PNG" mime-type="image/png"/></media>
+<caption>A simple 2-D example for the decision algorithm in an SVM</caption></figure><para id="id12122069">However, often the data is not distinguishable
+in two dimensions in which case it is mapped to higher dimensions
+and the same process is done. An example is shown in Figure
+2.</para>
+<figure id="element-997"><title>Mapping In Higher Dimensional Space</title>
+<media id="idm1750224" alt=""><image src="../../media/Ex2.PNG" mime-type="image/png"/></media>
+<caption>When there is no solution in a lower dimension it can be mapped to a higher dimension and a decision plane is easier to construct</caption></figure>
+<para id="id11193079">Support Vector Machine models can be
+classified into four major groups.</para>
+<list list-type="enumerated" id="id11764948">
+<item>C-SVM classification</item>
+<item>nu-SVM classification</item>
+<item>epsilon-SVM regression</item>
+<item>nu-SVM regression</item>
+</list>
+<para id="id12084089">The first two are classification algorithms
+which minimize different error functions while the second two
+perform similar algorithms by regression [1].</para><para id="element-76">[1] Chih-Chung Chang and Chih-Jen Lin, LIBSVM : a library for support vector machines, 2001. Software available at http://www.csie.ntu.edu.tw/~cjlin/libsvm</para>
+
+
+
+
+</content>
+</document>

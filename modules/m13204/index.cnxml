@@ -1,0 +1,31 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Pitch Detection</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>40f3c6b8-cc10-47ff-985f-239c8b373b61</md:uuid>
+</metadata>
+<content>
+<section id="id4378067"><title>Pitch Detection</title>
+<para id="id6959083">Detecting the pitch of an input signal seems
+deceptively simple. Many groups have tackled this challenge by
+simply taking the Fourier transform of the signal, and then finding
+the frequency with the highest spectral magnitude. As elegant as it may seem, this
+approach does not work for many musical instruments. Instead,
+we have chosen to approach the problem from a more expandable point
+of view.</para>
+<para id="id7436417">One of the problems with finding the
+fundamental frequency lies in simple definition. In our case, we
+will define this as being the frequency that the human ear
+recognizes as being dominate. The human auditory system responds
+most sensitively to the equivalent of the lowest common denominator of the produced frequencies. This can be modeled by finding the strongest set of frequencies amplitudes, and taking the lowest frequency value of that group. This process is quite effective, though it does rely on the condition that the fundamental frequency actually exists, and isn't just simulated via a combination of higher harmonics. The
+following example illustrates this more concretely.</para>
+<figure id="id6232187"><media id="idm883712" alt=""><image src="../../media/Graphic1-4723" mime-type="image/jpeg"/></media>
+<caption>Frequence vs. Time for Trumpet playing a concert 'A'=440 Hz</caption></figure>
+<para id="id5676315">In the above waveform, we want to find the
+frequency heard by the human ear as being the fundamental pitch. To
+do this, we first look at the five highest peaks, which occur at
+440, 880, 1320, 1760, and 2640 Hz. From this set of values, we
+grab the lowest occurring frequency. Hence, the fundamental
+frequency of the above signal would be stated as being 440 Hz, or a
+concert 'A'... which is, in fact, the pitch that was played.</para>
+</section>
+</content>
+</document>

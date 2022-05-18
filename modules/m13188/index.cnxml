@@ -1,0 +1,97 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Audio Features</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>5c69d8b6-14eb-4c74-9832-bba46974bc2b</md:uuid>
+</metadata>
+<content>
+<para id="id50998462">How do we decide what parts of the spectrum
+are important? The CUIDADO project<link target-id="id7772707">(2)</link> provided a set of 72 audio
+features, and research1 has shown that some of the features are
+more important in capturing the signal characteristics. We
+therefore decided to implement a small subset of these
+features:</para>
+<para id="id5967549">Cepstral Features</para>
+<list list-type="bulleted" id="id5967554">
+<item>Mel-Frequency Cepstrum Coefficients (MFCC), k = 2:13</item>
+</list>
+<para id="id46224414">Spectral Features</para>
+<list list-type="bulleted" id="id8836435">
+<item>Slope</item>
+<item>Roll-Off</item>
+<item>Centroid</item>
+<item>Spread</item>
+<item>Skew</item>
+<item>Kurtosis</item>
+<item>Odd-to-Even Harmonic Energy Ratio (OER)</item>
+<item>Tristimulus</item>
+</list>
+<section id="def"><title>Definitions</title> 
+<para id="id8978735">Cepstral coefficients have received a great
+deal of attention in the speech processing community, as they try
+to extract the characteristics of the filter and model it
+independently of the signal being produced. This is ideal, as the
+filter in our case is the instrument that we are trying to
+recognize. We work on a Mel scale because it more accurately models
+how the human auditory system perceives different frequencies, i.e.
+it gives more weight to changes at low frequencies as humans are
+more adept at distinguishing low frequency changes.</para>
+<para id="id48335089">The centroid correlates to the “brightness”
+of the sound and is often higher than expected due to the energy
+from harmonics above the fundamental frequency. The spread, skew,
+and kurtosis are based on the 2nd, 3rd, and 4th moments and, along
+with the slope, help portray spectral shape.</para>
+<para id="id13363009">Odd-to-even harmonic energy ratio simply
+determines whether a sound consists primarily of odd harmonic
+energy, of even harmonic energy, or whether the harmonic energy is
+equally spread.</para>
+<para id="id48797860">The tristimulus measure energy as well and
+were introduced as the timbre equivalent to the color attributes of
+vision. Like the OER, it provides clues regarding the distribution
+of harmonic energy, this time focusing on low, mid, and high
+harmonics rather than odd and even harmonics. This gives more
+weight to the first few harmonics, which are perceptually more
+important.</para>
+</section>
+<section id="chose"><title>How We Chose Features</title> 
+<para id="id50918568">MFCC have shown to work very well in
+monophonic environments, as they capture the shape of the spectrum
+very effectively. Unfortunately, they are of less use in polyphonic
+recordings, as the MFCC captures the shape of a spectrum calculated
+from multiple sources. Most of the work we have seen on this
+subject uses MFCC regardless, however. They are particularly useful
+if only one instrument is playing or is relatively quite
+salient.</para>
+<para id="id13366341">Most wind instruments have their harmonics
+evenly spread among the odd and even indices, but the clarinet is
+distinct in that it produces spectra consisting predominantly of
+odd ratios, with very little even harmonics appearing at all. This
+makes sense from a physics standpoint, as when played, the clarinet
+becomes a closed cylinder at one end, therefore allowing only the
+odd harmonics to resonate. This feature was thus chosen primarily
+with clarinet classification in mind.</para>
+<para id="id7388468">We chose the roll-off and tristimulus as our
+energy measures, as they were both easy to implement and judged to
+be important<link target-id="id7772707">(1)</link>. Finally, the first four spectral moments and the
+spectral slope, in both perceptual and spectral models, were shown
+to be the top ten most important features in the same study and were
+therefore some of the first features added to our classification
+system. We note that we had hoped to implement a perceptual model
+and thereby nearly double our features, but we could not find an
+accurate filter model for the mid-ear and thus decided to forgo any
+features based on perceptual modeling.</para>
+</section>
+<para id="id7772707">For further discussion of these features,
+along with explicit mathematical formulas, please refer to
+<link target-id="id7772707">(1)</link>.</para>
+<section id="ref"><title>References</title> 
+<list list-type="enumerated" id="id50625580">
+<item>A.A. Livshin and X. Rodet. “Musical Instrument Identification
+in Continuous Recordings,” in Proc. of the 7th Int. Conference on
+Digital Audio Effects, Naples, Italy, October 5-8, 2004.</item>
+<item>G. Peeters. “A large set of audio features for sound
+description (similarity and classification) in the CUIDADO
+project,” 2003. URL:
+http://www.ircam.fr/anasyn/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf.</item>
+</list>
+</section>
+</content>
+</document>

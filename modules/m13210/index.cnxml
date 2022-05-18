@@ -1,0 +1,21 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Conclusions and References</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>15af6623-b3b8-4dc9-bb08-3e2c60e22c22</md:uuid>
+</metadata>
+  <content>
+<section id="concl">
+<title>Conclusions</title>
+    <para id="element-784">Our results showed that vowel formant analysis provides accurate information on a person’s overall speech and accent.  However, the differences are not in how speakers make the vowel sounds, but by what vowel sounds are made when speaking certain letter groupings.  They also showed that neural networks are a viable solution for generating an accent detection and classification algorithm.  Because of the nature of neural networks, we can improve the performance of the system by feeding more training data into the network.  We can also improve the performance of our system by using a better formant detector.  One suggestion we received from the creator of Praat was to use pre-emphasis to make the formant peaks more obvious, even if one formant peak is on another formant's slope.</para>
+</section>
+<section id="ack">
+<title>Acknowledgements</title>
+<para id="element-537"> We would like to thank all the people who allowed us to record their voices and Dr. Bill for providing us with a high quality microphone.  Secondly, we’d like to thank Andrew Harrison for giving our team a crash-course in linguistics and phonetics. Finally, we’d like to especially thank caffeine, without it this project would never have been finished. 
+</para>
+</section>
+<section id="ref">
+<title>References</title>
+<para id="element-413">Source: http://accent.gmu.edu 
+Source: http://en.wikipedia.org/wiki/Formant</para></section><figure id="element-95"><media id="idp1216224" alt=""><image src="../../media/snovich_prepicky_andreat-scaled.jpg" mime-type="image/jpeg"/></media></figure>
+  </content>
+  
+</document>

@@ -1,0 +1,53 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+<title>Introduction to Accent Classification with Neural Networks</title>
+<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>638eed97-6b4b-46f2-8ea7-3eeaedd4a10d</md:uuid>
+</metadata>
+<content>
+<section id="oview">
+  <title>Overview</title> 
+  <para id="id52337719">Although seemingly subtle, accents have
+important influences in many areas – from business, to sociology,
+technology, security, and intelligence. While much linguistic
+analysis has been done on the subject matter, very little work has
+done with regards to potential applications.</para>
+<section id="goals">
+<title>Goals</title>
+<para id="id50932569">The goal of this project is to generate a process for accurate accent detection. The algorithm developed should have
+the flexibility to choose how many accents to differentiate
+between. Currently, the algorithm is aimed at differentiating
+accents by languages, rather than regions, but should be able to
+conform to the latter as well. Finally, the application should
+produce an output showing the relative strength of a speaker's
+primary accent compared to the rest in the system.</para></section>
+
+<section id="dchoices">
+<title>Design Choices</title>
+<para id="id52817206">The agreed-upon option for achieving the
+desired flexibility in the project's algorithm is to use a neural
+network. A neural network is a matrix containing weights that
+correspond to how certain parameters fed to the network tie the
+inputs to the outputs. Parameters of known inputs with
+corresponding outputs are fed to the network to train it. Training
+the network produces the weighted matrix, to which test samples can
+then be fed. This provides a powerful and flexible tool that can be
+used to generate the desired algorithm.</para><para id="blah"> Utilizing this limits the
+project group only by the amount of overall samples collected to
+train the matrix with, and how they are defined. For this project,
+approximately 800 samples from over 70 people have been collected
+for the purposes of training and testing. The group of
+language-based accents to test with consists of American Northern
+English, American Texan English, Farsi, Russian, Mandarin, and
+Korean.</para></section>
+
+<section id="appz">
+<title>Applications</title>
+<para id="id28103348">Potential applications for this project are
+incredibly diverse. One example might be for tagging information
+about a subject for intelligence purposes. The program could also
+be used as a potential aid/error check for voice-recognition based
+systems such as customer service or bioinformatics in security
+systems. The project can even aid in showing a student's progress
+in learning a foreign language.</para></section></section>
+
+</content>
+</document>

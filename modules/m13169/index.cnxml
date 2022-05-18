@@ -1,0 +1,11 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>MATLAB Analysis Code</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>730af34d-edb4-4332-a89b-b72667d75f7b</md:uuid>
+</metadata>
+  <content>
+    
+
+<para id="element-58">Click <link resource="lpf.m">here</link> to download a function that takes the noisy signals and runs it through a low pass filter.</para><para id="element-351">Click <link resource="mf.m">here</link> to download a function that takes the cleaned signal and runs it through the matched filter. </para><para id="element-991">Click <link resource="detect.m">here</link> to download a function that performs the convolution for each branch of the matched filter.  </para>   
+  </content>
+  
+</document>
